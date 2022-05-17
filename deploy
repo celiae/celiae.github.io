@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+git add -A
+git config user.email "ceelia0g@gmail.com"
+git config user.name "Celiae"
+git commit
+git push -u origin master:master
