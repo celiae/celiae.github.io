@@ -113,35 +113,37 @@ export function App() {
       <Container>
         <Stack>
           <Typography variant="h2" component="h2" color={primary}>
-            celiae.github.io
+            Celiae
           </Typography>
           <Divider />
           <Typography mt={10} variant="h4" component="h2">
             Show my work
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={6} md={8}>
-              <Card variant="outlined" sx={{ width: 300, my: 4 }}>
-                <CardActionArea
-                  onClick={() => {
-                    window.open("http://celiae.dns.army:1024");
-                  }}
-                >
-                  <CardContent>ceblog</CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={6} md={8}>
-              <Card variant="outlined" sx={{ width: 300 }}>
-                <CardActionArea
-                  onClick={() => {
-                    window.open("http://celiae.dns.army:8443");
-                  }}
-                >
-                  <CardContent>code-server</CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
+            <Stack>
+              <Grid item xs={4} md={4}>
+                <Card variant="outlined" sx={{ width: 200, my: 4 }}>
+                  <CardActionArea
+                    onClick={() => {
+                      window.open("http://celiae.dns.army:1024");
+                    }}
+                  >
+                    <CardContent>ceblog</CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+              <Grid item xs={4} md={4}>
+                <Card variant="outlined" sx={{ width: 200 }}>
+                  <CardActionArea
+                    onClick={() => {
+                      window.open("http://celiae.dns.army:8443");
+                    }}
+                  >
+                    <CardContent>code-server</CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            </Stack>
           </Grid>
           <Typography mt={10} variant="h5" component="h2">
             {/* 绝大多数不是我自己的东西,我只是在利用轮子. */}
@@ -168,6 +170,7 @@ export function App() {
             <Link href="https://t.me/celiaetg">Telegram</Link>
           </Typography>
         </Stack>
+        <Divider />
         <CustomizedTimeline />
       </Container>
     </>
