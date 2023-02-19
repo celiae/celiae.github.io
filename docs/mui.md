@@ -24,7 +24,7 @@ export default function Layout() {
 }
 ```
 
-## Drawer
+<!-- ## Drawer
 
 ```jsx
 import * as React from "react";
@@ -190,12 +190,14 @@ function ResponsiveDrawer(props) {
 }
 
 ResponsiveDrawer.propTypes = {
-  window: PropTypes.func,
-  children: PropTypes.node,
+window: PropTypes.func,
+children: PropTypes.node,
 };
 
 export default ResponsiveDrawer;
-```
+
+````
+-->
 
 ## CenterBox
 
