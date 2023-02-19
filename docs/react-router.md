@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[主页](../index.md).
+[主页](../index.md)
 
 # react router
 

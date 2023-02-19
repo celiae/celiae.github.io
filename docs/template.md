@@ -2,7 +2,7 @@
 layout: default
 ---
 
-[主页](../index.md).
+[主页](../index.md)
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
