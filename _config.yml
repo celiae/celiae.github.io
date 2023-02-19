@@ -1,6 +1,5 @@
-remote_theme: pages-themes/hacker@v0.2.0
-plugins:
-- jekyll-remote-theme
-
-title: "Celiae"
-description: "Fullstack workflow"
+title: Architect theme
+description: Architect is a theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-architect
