@@ -8,6 +8,8 @@ layout: default
 
 ## 脚本
 
+[查看脚本](../script/vitereact)
+
 ```bash
 project_name=$1
 npm create vite@latest $project_name

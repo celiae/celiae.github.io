@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+project_name=$1
+npm create vite@latest $project_name
+cd $project_name
+npm install react-router-dom @mui/material @emotion/react @emotion/styled @mui/x-data-grid @reduxjs/toolkit react-redux react-icons
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+echo
+"
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+" > tailwind.config.cjs
+
+echo
+"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+" > ./src/index.css
+
+npm run build
+npm run dev
