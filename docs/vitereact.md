@@ -12,7 +12,7 @@ layout: default
 project_name=$1
 npm create vite@latest $project_name
 cd $project_name
-npm install react-router-dom @mui/material @emotion/react @emotion/styled @mui/x-data-grid @reduxjs/toolkit react-redux react-icons
+npm install react-router-dom @mui/material @emotion/react @emotion/styled @reduxjs/toolkit react-redux react-icons
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 echo

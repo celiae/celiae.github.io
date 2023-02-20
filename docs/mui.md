@@ -6,7 +6,15 @@ layout: default
 
 # mui
 
-## Layout
+## 安装
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+## 布局
+
+### layouts/index.jsx
 
 ```jsx
 import React from "react";
@@ -14,17 +22,34 @@ import { Outlet } from "react-router-dom";
 import ResponsiveDrawer from "./AppDrawer";
 
 export default function Layout() {
-  return (
-    <div>
-      <ResponsiveDrawer>
+  const user = useSelector(selectAll);
+  const mode = useSelector((state) => state.theme.mode);
+  if (!user.login) {
+    return (
+      <ThemeProvider theme={theme}>
         <Outlet />
+        <AppAlert />
+      </ThemeProvider>
+    );
+  }
+  return (
+    <ThemeProvider theme={mode == "light" ? theme : darkTheme}>
+      <ResponsiveDrawer>
+        <AppAlert />
+        <SpecificTransition>
+          <Outlet />
+        </SpecificTransition>
       </ResponsiveDrawer>
-    </div>
+      <AppSnackbar />
+      <FormDialog />
+    </ThemeProvider>
   );
 }
 ```
 
-## CenterBox
+## 居中盒
+
+### layouts/CenterBox.jsx
 
 ```jsx
 import { Box } from "@mui/material";
