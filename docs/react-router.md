@@ -2,8 +2,6 @@
 layout: default
 ---
 
-[主页](../index.md)
-
 # react router
 
 ## 安装

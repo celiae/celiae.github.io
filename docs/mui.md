@@ -2,8 +2,6 @@
 layout: default
 ---
 
-[主页](../index.md)
-
 # mui
 
 ## 安装

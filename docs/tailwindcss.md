@@ -2,8 +2,6 @@
 layout: default
 ---
 
-[主页](../index.md)
-
 # tailwindcss
 
 ## 安装

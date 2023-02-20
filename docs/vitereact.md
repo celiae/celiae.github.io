@@ -2,8 +2,6 @@
 layout: default
 ---
 
-[主页](../index.md)
-
 # 开发命令
 
 ## 脚本
