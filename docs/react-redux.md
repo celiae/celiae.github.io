@@ -12,7 +12,7 @@ npm install @reduxjs/toolkit react-redux
 
 ## 代码
 
-### userSlice.js
+### 配置 1 userSlice.js
 
 ```javascript
 import { createSlice } from "@reduxjs/toolkit";
@@ -42,7 +42,7 @@ export default userSlice.reducer;
 export const selectAll = (state) => state.user;
 ```
 
-### store.js
+### 配置 2 store.js
 
 ```javascript
 import { configureStore } from "@reduxjs/toolkit";
@@ -55,7 +55,27 @@ export default configureStore({
 });
 ```
 
-### App.jsx
+### 配置 3 main.jsx
+
+```javascript
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import store from "./app/store";
+import { Provider } from "react-redux";
+import "./index.css";
+import initailRouter from "./router";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <RouterProvider router={initailRouter} />
+    </Provider>
+  </React.StrictMode>
+);
+```
+
+### 使用 App.jsx
 
 ```jsx
 import { useDispatch, useSelector } from "react-redux";
