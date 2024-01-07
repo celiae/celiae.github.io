@@ -1,9 +1,12 @@
 ---
 title: "Arch使用"
 excerpt: "在已有的 ArchLinux 上操作"
-createDate: "2022-10-15"
-modifiedDate: "2022-10-15"
-category: "linux"
+date: 2022/10/15 20:46:25
+updated: 2022/10/15 20:46:25
+categories: 
+  - "Linux"
+tags: 
+  - "Linux"
 ---
 
 ## colemak 键盘布局
