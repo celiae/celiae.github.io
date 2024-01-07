@@ -1,3 +1,12 @@
+---
+title: "CET4-6"
+excerpt: "四六级及格技巧"
+createDate: "2022-06-03"
+modifiedDate: "2022-06-10"
+category: "post"
+---
+
+
 Windows10
 nodejs 18
 
