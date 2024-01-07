@@ -1,18 +1,15 @@
 ---
-title: "CET4-6"
-excerpt: "四六级及格技巧"
-createDate: "2022-06-03"
-modifiedDate: "2022-06-10"
-category: "post"
+title: "Vue3 环境搭建"
+excerpt: "使用Composition API生态"
+date: 2024-01-06 20:46:25
+updated: 2024-01-08 00：12:25
+categories:
+  - 开发
 ---
 
 
-Windows10
-nodejs 18
-
-
 ### 框架搭建
-> /<your-path>
+找一个专门放代码的地方
 
 ``` bash
 npx create-vue reservoir-vue

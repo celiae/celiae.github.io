@@ -1,9 +1,10 @@
 ---
 title: "tailwindcss"
 excerpt: "create-react-app 和 create-next-app 的 tailwindcss 配置"
-createDate: "2022-05-26"
-modifiedDate: "2023-06-10"
-category: "develop"
+date: 2022-05-26 20:46:25
+updated: 2023-06-10 20:46:25
+categories: 
+  - 开发
 ---
 
 ## 安装

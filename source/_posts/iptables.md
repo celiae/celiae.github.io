@@ -1,9 +1,10 @@
 ---
 title: "Iptables"
 excerpt: "基本防火墙"
-createDate: "2022-05-22"
-modifiedDate: "2022-06-10"
-category: "linux"
+date: 2022-05-22 20:46:25
+updated: 2022-06-10 20:46:25
+categories: 
+  - Linux
 ---
 
 ## Iptables

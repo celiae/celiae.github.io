@@ -1,9 +1,9 @@
 ---
 title: "网络配置"
 excerpt: "先启动 NetworkManager,这是前提."
-createDate: "2022-05-26"
-modifiedDate: "2022-06-13"
-category: "linux"
+date: "2022-05-26"
+updated: "2022-06-13"
+categories: "Linux"
 ---
 
 ## NetworkManager WIFI 联网

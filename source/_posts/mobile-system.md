@@ -1,9 +1,10 @@
 ---
 title: "Pixel"
 excerpt: "红米K20pro刷机(raphael)"
-createDate: "2022-06-01"
-modifiedDate: "2022-06-10"
-category: "post"
+date: 2022-06-01 20:46:25
+updated: 2022-06-10 20:46:25
+categories:
+  - 常规
 ---
 
 ## 开始刷机

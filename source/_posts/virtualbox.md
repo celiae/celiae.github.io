@@ -1,9 +1,10 @@
 ---
 title: "虚拟机"
 excerpt: "Virtualbox在arch的使用方法"
-createDate: "2022-07-08"
-modifiedDate: "2022-07-08"
-category: "post"
+date: 2022-07-08 20:46:25
+updated: 2022-07-08 20:46:25
+categories: 
+  - 常规
 ---
 
 ## Virtualbox

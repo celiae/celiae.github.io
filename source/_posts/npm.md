@@ -1,9 +1,10 @@
 ---
 title: "NPM"
 excerpt: "理解package.json"
-createDate: "2022-11-04"
-modifiedDate: "2022-11-04"
-category: "develop"
+date: 2022-11-04 20:46:25
+updated: 2022-11-04 20:46:25
+categories: 
+  - 开发
 ---
 
 ## 现象

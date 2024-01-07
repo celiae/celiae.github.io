@@ -1,9 +1,10 @@
 ---
 title: "Git"
 excerpt: "Git本地提交,上传Github"
-createDate: "2022-05-14"
-modifiedDate: "2022-06-10"
-category: "develop"
+date: 2022-05-14 20:46:25
+updated: 2022-06-10 20:46:25
+categories: 
+  - 开发
 ---
 
 ## Git Github 区别

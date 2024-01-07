@@ -1,9 +1,10 @@
 ---
 title: "开发命令"
 excerpt: "用 Bash 的方式一键创建项目, 自动在项目中添加和配置插件"
-createDate: "2023-02-26"
-modifiedDate: "2023-04-7"
-category: "develop"
+date: 2023-02-26 20:46:25
+updated: 2023-04-7 20:46:25
+categories: 
+  - 开发
 ---
 
 ## Vite

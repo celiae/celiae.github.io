@@ -1,9 +1,10 @@
 ---
 title: "Nginx"
 excerpt: "下载 nginx 编辑 nginx 配置文件"
-createDate: "2022-05-15"
-modifiedDate: "2022-06-10"
-category: "linux"
+date: 2022-05-15 20:46:25
+updated: 2022-06-10 20:46:25
+categories:
+  - Linux
 ---
 
 ## 在已有 Linux 上启用 nginx

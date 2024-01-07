@@ -1,9 +1,10 @@
 ---
 title: "CET4-6"
 excerpt: "四六级及格技巧"
-createDate: "2022-06-03"
-modifiedDate: "2022-06-10"
-category: "post"
+date: 2022/06/03 20:46:25
+updated: 2022/06/10 20:46:25
+categories: 
+   - 常规
 ---
 
 ## 四六级

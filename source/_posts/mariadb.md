@@ -1,9 +1,10 @@
 ---
 title: "Mariadb"
 excerpt: "安装 mariadb,创建用户"
-createDate: "2022-05-25"
-modifiedDate: "2022-05-25"
-category: "linux"
+date: 2022-05-25 20:46:25
+updated: 2022-05-25 20:46:25
+categories: 
+  - Linux
 ---
 
 ## ArchWiki

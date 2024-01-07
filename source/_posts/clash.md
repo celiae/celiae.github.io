@@ -1,9 +1,10 @@
 ---
 title: "Clash"
 excerpt: "配置代理,访问真正的Internet"
-createDate: "2022-06-01"
-modifiedDate: "2022-06-10"
-category: "post"
+date: 2022-06-01 20:46:25
+updated: 2022-06-10 20:46:25
+categories:
+  - 常规
 ---
 
 ## Clash 代理

@@ -1,9 +1,10 @@
 ---
 title: "计算机专业环境搭建"
 excerpt: "总结记录本人个人真实使用的计算机环境"
-createDate: "2022-05-14"
-modifiedDate: "2022-09-23"
-category: "linux"
+date: 2022-05-14 20:46:25
+updated: 2022-09-23 20:46:25
+categories:
+  - Linux
 ---
 
 本文呈现了从操作系统的安装到IDE相关的环境搭建。研究总结官方文档中本人需要的部分，

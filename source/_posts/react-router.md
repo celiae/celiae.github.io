@@ -1,9 +1,10 @@
 ---
 title: "react router"
 excerpt: "React 主流路由的使用姿势"
-createDate: "2022-05-26"
-modifiedDate: "2022-06-10"
-category: "develop"
+date: 2022-05-26 20:46:25
+updated: 2022-06-10 20:46:25
+categories: 
+  - 开发
 ---
 
 ## 安装

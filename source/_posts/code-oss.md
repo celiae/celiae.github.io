@@ -1,9 +1,10 @@
 ---
 title: "Code"
 excerpt: "VSCode开源版本,前端语言编写而成的IDE"
-createDate: "2022-05-26"
-modifiedDate: "2022-07-08"
-category: "develop"
+date: 2022-05-26 20:46:25
+updated: 2022-07-08 20:46:25
+categories: 
+  - 开发
 ---
 
 ## Code-OSS
