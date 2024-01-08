@@ -4,9 +4,9 @@
 
 # Site
 title: Ceblog
-subtitle: 'IT 实施运维'
-description: '来过'
-keywords:
+subtitle: 'Celiae 个人博客'
+description: '躺了'
+keywords: ceblog
 author: celiae
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -17,7 +17,7 @@ slot_id: 0
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://49.234.56.110:83
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,7 +44,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:

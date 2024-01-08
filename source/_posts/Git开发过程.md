@@ -4,7 +4,7 @@ excerpt: "通过使用Git,走通各个流程"
 date: 2022-05-14 20:46:25
 updated: 2024-01-08 15:05:00
 categories:
-  - 开发
+  - 软件工程
 tags:
   - Git
   - Github

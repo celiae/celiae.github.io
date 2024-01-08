@@ -4,7 +4,7 @@ excerpt: "在已有的 ArchLinux 上操作"
 date: 2022/10/15 20:46:25
 updated: 2022/10/15 20:46:25
 categories: 
-  - 个人配置
+  - 配置
 tags:
   - Linux
   - ArchLinux

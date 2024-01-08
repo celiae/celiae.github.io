@@ -1,0 +1,10 @@
+widgets:
+  -
+    type: categories
+    position: left
+  -
+    type: recent_posts
+    position: right
+  -
+    type: tags
+    position: right
