@@ -14,7 +14,7 @@ tags:
 本文呈现了从操作系统的安装到IDE相关的环境搭建。研究总结官方文档中本人需要的部分，
 借鉴网络上个人或组织的博客，结合多年使用各种操作系统的经验，归纳本人最喜欢计算机环境。
 
-## [ArchLinux](https://wiki.archlinux.org/) 真实场景安装
+## 真实场景安装
 
 提前准备：
 
@@ -257,7 +257,7 @@ reboot  # 重启
 
 ### i3wm 安装
 
-安装i3wm，一个Display Manager，和一个虚拟终端，默认配置的 i3wm 就可以，不用配置的花里胡哨。
+安装i3wm，一个Display Manager，和一个虚拟终端，默认配置的 i3wm 就可以。
 
 ```shell
 sudo pacman -S i3-wm lightdm lightdm-gtk-greeter alacritty
@@ -284,18 +284,41 @@ EDITOR=nano
 JAVA_HOME=/usr/utils/jvm/default
 ```
 
-#### xorg 配置colemak键盘布局
+#### 配置colemak键盘布局
 
-新建文件 `/etc/X11/xorg.conf.d/00-keyboard.conf`
+两种方式：
+1. xorg，推荐。够稳定，切换不方便，较底层，适合长期colemak用户
+2. 输入法，需要输入法启动，退格键没有映射
 
-```shell
-Section "InputClass"
-	Identifier "system-keyboard"
-	MatchIsKeyboard "on"
-	Option "XbkLayout" "us"
-	Option "XkbVariant" "colemak"
-EndSection
-```
+
+- xorg
+
+  新建文件 `/etc/X11/xorg.conf.d/00-keyboard.conf`
+
+  ```shell
+  Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "XbkLayout" "us"
+    Option "XkbVariant" "colemak"
+  EndSection
+  ```
+
+- 输入法
+
+  桌面系统安装 `fcitx`, 找到 `colemak` 键盘布局，切换即可.
+
+  默认情况下, caps lock 映射的 backspace 无法长按连续删除字符, 在 `.bashrc .zshrc`之类的文件中添加 `xset r 66` 命令.
+
+  ```bash
+  sudo vim /etc/profile	# <- xset r 66
+  ```
+
+  ```bash
+  unset ...
+  ...
+  xset r 66
+  ```
 
 #### 启用32位软件包
 
@@ -346,4 +369,3 @@ JetBrains全家桶使用java编写，各方面优秀，许可证可通过魔法�
 ```shell
 yay -S intellij-idea-ultimate-edition webstorm
 ```
-
