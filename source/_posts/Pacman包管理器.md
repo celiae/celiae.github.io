@@ -6,9 +6,7 @@ updated: 2024/01/08 10:58:00
 categories: 
   - 配置
 tags:
-  - Linux
   - ArchLinux
-  - colemak
 ---
 
 ArchLinux 的包管理器

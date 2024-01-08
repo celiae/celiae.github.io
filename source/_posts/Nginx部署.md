@@ -1,6 +1,6 @@
 ---
 title: "Nginx部署"
-excerpt: "下载 nginx 编辑 nginx 配置文件"
+excerpt: "使用nginx反向代理多个站点"
 date: 2022-05-15 20:46:25
 updated: 2024-01-08 15:19:00
 categories:
