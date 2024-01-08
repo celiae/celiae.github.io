@@ -1,10 +1,13 @@
 ---
-title: "开发命令"
-excerpt: "用 Bash 的方式一键创建项目, 自动在项目中添加和配置插件"
+title: "Vite搭建前端"
+excerpt: "不推荐!!Vite更适合测试环境. 用 Shell 的方式一键创建项目, 自动在项目中添加和配置插件"
 date: 2023-02-26 20:46:25
-updated: 2023-04-7 20:46:25
+updated: 2024-01-08 15:50:00
 categories: 
   - 开发
+tags:
+  - Vite 
+  - React 
 ---
 
 ## Vite

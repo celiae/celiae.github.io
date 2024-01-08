@@ -1,10 +1,14 @@
 ---
-title: "Mariadb"
+title: "Mariadb数据库"
 excerpt: "安装 mariadb,创建用户"
 date: 2022-05-25 20:46:25
-updated: 2022-05-25 20:46:25
+updated: 2024-01-08 15:12:00
 categories: 
-  - Linux
+  - 数据库
+  - 运维
+tags:
+  - Mariadb
+  - Database
 ---
 
 ## ArchWiki

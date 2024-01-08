@@ -1,10 +1,18 @@
 ---
-title: "Pixel"
+title: "Android系统刷机"
 excerpt: "红米K20pro刷机(raphael)"
 date: 2022-06-01 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-08 15:14:00
 categories:
-  - 常规
+  - 刷机
+  - 系统
+tags:
+  - Android
+  - Pixel Experience
+  - fastboot
+  - adb
+  - twrp
+  - Linux
 ---
 
 ## 开始刷机

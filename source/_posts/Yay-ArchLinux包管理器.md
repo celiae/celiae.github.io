@@ -1,10 +1,14 @@
 ---
-title: "yay"
-excerpt: "可以作为ArchLinux pacman 的替代品"
+title: "Yay-ArchLinux包管理器"
+excerpt: "ArchLinux pacman 的超集"
 date: 2022-05-26 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-08 15:52:00
 categories: 
-  - Linux
+  - 运维
+tags:
+  - 包管理器 
+  - Yay 
+  - ArchLinux 
 ---
 
 ## yay - AUR helper (AUR 包管理器)

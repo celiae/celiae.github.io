@@ -1,8 +1,8 @@
 ---
-title: "tailwindcss"
+title: "TailwindCSS整合"
 excerpt: "create-react-app 和 create-next-app 的 tailwindcss 配置"
 date: 2022-05-26 20:46:25
-updated: 2023-06-10 20:46:25
+updated: 2024-01-08 15:46:25
 categories: 
   - 开发
 ---
@@ -24,13 +24,13 @@ npx tailwindcss init -p
 #### tailwind.config.cjs
 
 ```js
-/** @type {import('tailwindcss').Config} */
+/** @type {import('source/_posts/TailwindCSS整合').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 };
 ```
 
@@ -47,20 +47,20 @@ module.exports = {
 #### tailwind.config.cjs
 
 ```js
-/** @type {import('tailwindcss').Config} */
+/** @type {import('source/_posts/TailwindCSS整合').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    content: [
+        "./app/**/*.{js,ts,jsx,tsx}",
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
 
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+        // Or if using `src` directory:
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 };
 ```
 

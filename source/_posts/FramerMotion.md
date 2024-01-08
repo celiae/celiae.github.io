@@ -1,10 +1,14 @@
 ---
-title: "framer motion"
+title: "FramerMotion"
 excerpt: "React 生态中的动画库"
 date: 2022-05-26 20:46:25
 updated: 2022-06-10 20:46:25
 categories: 
   - 开发
+tags:
+  - React
+  - Framer-Motion
+  - Jsx
 ---
 
 ## 安装
@@ -19,14 +23,14 @@ npm install framer-motion
 
 ```jsx
 import React from "react";
-import { motion } from "framer-motion";
+import {motion} from "source/_posts/FramerMotion";
 
-export default function SpecificTransition({ children }) {
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      {children}
-    </motion.div>
-  );
+export default function SpecificTransition({children}) {
+    return (
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}}>
+            {children}
+        </motion.div>
+    );
 }
 ```
 

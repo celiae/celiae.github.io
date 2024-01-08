@@ -1,12 +1,14 @@
 ---
-title: "Arch使用"
+title: "ArchLinux使用"
 excerpt: "在已有的 ArchLinux 上操作"
 date: 2022/10/15 20:46:25
 updated: 2022/10/15 20:46:25
 categories: 
+  - 个人配置
+tags:
   - Linux
-tags: 
-  - Linux
+  - ArchLinux
+  - colemak
 ---
 
 ## colemak 键盘布局
@@ -18,7 +20,7 @@ tags:
 #### 临时配置
 
 ```bash
-loadkeys	/usr/share/kbd/keymaps/i386/colemak/colemak.map.gzbash
+loadkeys /usr/share/kbd/keymaps/i386/colemak/colemak.map.gzbash
 ```
 
 #### 永久配置

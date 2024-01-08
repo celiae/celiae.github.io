@@ -1,10 +1,14 @@
 ---
-title: "Git"
-excerpt: "Git本地提交,上传Github"
+title: "Git开发过程"
+excerpt: "通过使用Git,走通各个流程"
 date: 2022-05-14 20:46:25
-updated: 2022-06-10 20:46:25
-categories: 
+updated: 2024-01-08 15:05:00
+categories:
   - 开发
+tags:
+  - Git
+  - Github
+  - Linux
 ---
 
 ## Git Github 区别
@@ -17,7 +21,7 @@ categories:
 
 在项目根文件夹下,新建仓库.敲完后项目文件夹产生一个.git 文件夹.
 
-> 先赐予当前目录版本控制系统
+先赐予当前目录版本控制系统
 
 ```bash
 git init

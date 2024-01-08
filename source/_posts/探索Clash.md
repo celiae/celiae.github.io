@@ -1,10 +1,15 @@
 ---
-title: "Clash"
+title: "探索Clash"
 excerpt: "配置代理,访问真正的Internet"
 date: 2022-06-01 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-08 15:08:00
 categories:
-  - 常规
+  - 网络
+  - 安全
+tags:
+  - Clash
+  - ArchLinux
+  - Internet
 ---
 
 ## Clash 代理

@@ -1,10 +1,15 @@
 ---
-title: "Docker"
+title: "探索Docker"
 excerpt: "构造镜像,运行容器,上传dockerhub"
 date: 2022-05-14 20:46:25
 updated: 2023-04-06 20:46:25
 categories: 
+  - 运维
+  - 部署
+tags:
+  - Docker
   - Linux
+  - ArchLinux
 ---
 
 ## Docker

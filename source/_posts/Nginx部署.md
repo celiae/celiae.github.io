@@ -1,10 +1,15 @@
 ---
-title: "Nginx"
+title: "Nginx部署"
 excerpt: "下载 nginx 编辑 nginx 配置文件"
 date: 2022-05-15 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-08 15:19:00
 categories:
-  - Linux
+  - 运维
+  - Web
+tags:
+  - nginx 
+  - ArchLinux 
+  - Linux 
 ---
 
 ## 在已有 Linux 上启用 nginx

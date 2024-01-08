@@ -1,10 +1,14 @@
 ---
-title: "Iptables"
+title: "Iptables使用"
 excerpt: "基本防火墙"
 date: 2022-05-22 20:46:25
 updated: 2022-06-10 20:46:25
 categories: 
+  - 运维
+  - 安全
+tags:
   - Linux
+  - ArchLinux
 ---
 
 ## Iptables

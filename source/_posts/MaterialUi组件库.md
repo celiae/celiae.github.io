@@ -1,10 +1,15 @@
 ---
-title: "mui"
-excerpt: "避免造轮子的 UI 库"
+title: "MaterialUi组件库"
+excerpt: "下载量最多之一的 React UI 组件库"
 date: 2022-05-26 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-08 15:15:00
 categories:
   - 开发
+tags:
+  - React
+  - Mui
+  - 组件
+  - UI
 ---
 
 ## 安装

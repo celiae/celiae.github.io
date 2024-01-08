@@ -1,10 +1,14 @@
 ---
-title: "虚拟机"
-excerpt: "Virtualbox在arch的使用方法"
+title: "Virtualbox虚拟机"
+excerpt: "Virtualbox在ArchLinux的使用方法"
 date: 2022-07-08 20:46:25
-updated: 2022-07-08 20:46:25
+updated: 2024-01-08 15:47:25
 categories: 
-  - 常规
+  - 运维
+  - 虚拟机
+tags:
+  - Virtualbox
+  - ArchLinux
 ---
 
 ## Virtualbox

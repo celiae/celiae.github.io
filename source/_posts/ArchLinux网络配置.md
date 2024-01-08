@@ -1,9 +1,15 @@
 ---
-title: "网络配置"
-excerpt: "先启动 NetworkManager,这是前提."
-date: "2022-05-26"
-updated: "2022-06-13"
-categories: "Linux"
+title: "ArchLinux网络配置"
+excerpt: "先启动 NetworkManager."
+date: 2022-05-26 15:15:00
+updated: 2024-01-08 15:15:00
+categories: 
+   - 运维
+   - 网络
+tags:
+   - Linux 
+   - ArchLinux 
+   - NetworkManager 
 ---
 
 ## NetworkManager WIFI 联网
