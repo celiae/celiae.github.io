@@ -5,11 +5,11 @@ date: 2022-05-15 20:46:25
 updated: 2024-01-08 15:19:00
 categories:
   - 运维
-  - Web
 tags:
   - nginx 
   - ArchLinux 
-  - Linux 
+  - Linux
+  - Web
 ---
 
 ## 在已有 Linux 上启用 nginx

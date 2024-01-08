@@ -5,10 +5,10 @@ date: 2022-07-08 20:46:25
 updated: 2024-01-08 15:47:25
 categories: 
   - 运维
-  - 虚拟机
 tags:
   - Virtualbox
   - ArchLinux
+  - 虚拟机
 ---
 
 ## Virtualbox

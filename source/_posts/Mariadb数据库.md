@@ -5,10 +5,10 @@ date: 2022-05-25 20:46:25
 updated: 2024-01-08 15:12:00
 categories: 
   - 数据库
-  - 运维
 tags:
   - Mariadb
   - Database
+  - 运维
 ---
 
 ## ArchWiki

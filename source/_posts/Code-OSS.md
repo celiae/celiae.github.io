@@ -5,12 +5,12 @@ date: 2022-05-26 20:46:25
 updated: 2024-01-08 15:09:00
 categories: 
   - 开发
-  - 工具
 tags:
   - Code-OSS
   - IDE
   - ArchLinux
   - Linux
+  - 工具
 ---
 
 ## Code-OSS

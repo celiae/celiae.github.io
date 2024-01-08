@@ -5,9 +5,9 @@ date: 2022-05-14 20:46:25
 updated: 2024-01-08 15:22:00
 categories:
   - 配置
-  - 运维
 tags:
-  - ArchLinux 
+  - ArchLinux
+  - 运维
   - Linux 
 ---
 
