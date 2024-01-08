@@ -29,7 +29,7 @@ tags:
 
 - 华为云
   ```bash
-  npm config set registry https://registry.npmmirror.com
+  npm config set registry https://mirrors.huaweicloud.com/repository/npm/
   ```
 
 ## package.json
