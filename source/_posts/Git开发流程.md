@@ -1,8 +1,8 @@
 ---
-title: "Git开发过程"
-excerpt: "通过使用Git,走通各个流程"
+title: "Git开发流程"
+excerpt: "配置密钥对,根据提示生成密钥对存放在指定位置,默认在~/.ssh 下"
 date: 2022-05-14 20:46:25
-updated: 2024-01-08 15:05:00
+updated: 2024-01-09 16:05:00
 categories:
   - 软件工程
 tags:

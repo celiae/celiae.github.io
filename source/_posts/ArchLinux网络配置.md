@@ -1,8 +1,8 @@
 ---
 title: "ArchLinux网络配置"
-excerpt: "先启动 NetworkManager."
+excerpt: "NetworkManager 一般是桌面软件需要的联网工具"
 date: 2022-05-26 15:15:00
-updated: 2024-01-08 15:15:00
+updated: 2024-01-09 16:06:00
 categories: 
    - 运维
 tags:

@@ -1,8 +1,8 @@
 ---
 title: "Yay-ArchLinux包管理器"
-excerpt: "ArchLinux pacman 的超集"
+excerpt: "yay就是用来下载那些不开源包的.也可以用yay代替pacman"
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:52:00
+updated: 2024-01-09 15:40:00
 categories: 
   - 运维
 tags:
@@ -17,43 +17,31 @@ tags:
 
 ## yay 安装过程
 
-### 安装 ArchLinux 的基本开发环境作为依赖,在 ArchLinux 完整安装过程中可能安装过
-
 ```bash
-pacman -S --needed git base-devel
+pacman -S --needed git base-devel # 安装依赖, ArchLinux 的基本开发环境
 ```
 
-### 从 ArchLinux 官方下载 yay 原始包
-
 ```bash
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.git # 从 ArchLinux 官方下载 yay 原始包
 ```
 
-### 进入目录
-
 ```bash
-cd yay
+cd yay  # 进入目录
 ```
 
-### 利用 ArchLinux 的工具"makepkg"安装 yay
-
 ```bash
-makepkg -si
+makepkg -si # 利用 ArchLinux 的工具"makepkg"安装 yay
 ```
 
-### yay 更新系统(pacman+AUR)
-
 ```bash
-yay
+yay # yay 更新系统(pacman+AUR)
 ```
 
-### pacman 更新系统(pacman)
-
 ```bash
-sudo pacman -Syu
+sudo pacman -Syu  # pacman 更新系统(pacman)
 ```
 
-> 当然能用开源用开源.
+能用开源用开源
 
 ## 遇到的问题
 

@@ -1,8 +1,8 @@
 ---
 title: "Pacman包管理器"
-excerpt: "在已有的 ArchLinux 上操作"
+excerpt: "ArchLinux 的包管理器"
 date: 2022/10/15 20:46:25
-updated: 2024/01/08 10:58:00
+updated: 2024/01/09 15:51:00
 categories: 
   - 配置
 tags:
@@ -53,15 +53,11 @@ sudo pacman -Fy # 更新包信息数据库
 
 ### 我的运行环境
 
-- linux 操作系统
-- xfce 桌面环境
 - gcc 编译器
 - code-oss 代码编辑器
 
-#### GCC 默认是安装的, 如果没有则按照以上包管理器方法完成安装
-
-#### 安装 code-oss
+GCC 默认是安装的, 如果没有则按照以上包管理器方法完成安装
 
 ```bash
-sudo pacman -S code
+sudo pacman -S code # 安装 code-oss
 ```

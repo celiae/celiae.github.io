@@ -1,8 +1,8 @@
 ---
 title: "探索Docker"
-excerpt: "构造镜像,运行容器,上传dockerhub"
+excerpt: "启动镜像等于创建容器. 若容器需要接管本地流量, 则可开启映射端口"
 date: 2022-05-14 20:46:25
-updated: 2023-04-06 20:46:25
+updated: 2024-01-09 15:19:00
 categories: 
   - 运维
 tags:
@@ -20,7 +20,7 @@ tags:
 >
 > 以上是常见的文件命名方法, 也可取其他文件名. 例如 abc.yml.
 
-有了镜像就要启动, 启动成容器运行在计算机上. 如果容器需要接管本地流量, 则宿主机作代理, 开启映射端口
+启动镜像等于创建容器. 若容器需要接管本地流量, 则可开启映射端口
 
 ```bash
 docker run -d --name=code-server -p8080:80
@@ -84,7 +84,7 @@ _以上代码来自[linuxserver/code-server](https://hub.docker.com/r/linuxserve
 
 ###  构建镜像 
 
-通常在开发完工后会将项目打包成生产环境, 也就是产品. 
+通常在开发完工后会将项目打包成生产环境, 也就是产品.
 
 ```bash
 docker build -t celiae/ceblog:latest .

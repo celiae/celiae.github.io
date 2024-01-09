@@ -1,8 +1,8 @@
 ---
 title: "Nginx部署"
-excerpt: "使用nginx反向代理多个站点"
+excerpt: "在 docker 安装 nginx"
 date: 2022-05-15 20:46:25
-updated: 2024-01-08 15:19:00
+updated: 2024-01-09 15:56:00
 categories:
   - 运维
 tags:
@@ -11,6 +11,8 @@ tags:
   - Linux
   - Web
 ---
+
+使用nginx可以反向代理多个站点
 
 ## 在已有 Linux 上启用 nginx
 

@@ -1,8 +1,8 @@
 ---
 title: "TailwindCSS整合"
-excerpt: "create-react-app 和 create-next-app 的 tailwindcss 配置"
+excerpt: "npm install -D tailwindcss postcss autoprefixer"
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:46:25
+updated: 2024-01-09 15:48:00
 categories: 
   - 开发
   - 前端

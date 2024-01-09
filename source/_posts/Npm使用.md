@@ -1,8 +1,8 @@
 ---
 title: "Npm使用"
-excerpt: "理解package.json"
+excerpt: "这是npm初始化是必创建的文件，里面包含着所需要安装的包，版本等信息"
 date: 2022-11-04 20:46:25
-updated: 2024-01-08 15:20:00
+updated: 2024-01-09 15:53:00
 categories: 
   - 开发
   - 前端
@@ -15,7 +15,7 @@ tags:
 
 ## 国内镜像源
 
-默认的npm资源站`https://registry.npmjs.org/`服务器距离远且被隔离，当下载有问题可以替换以下地址
+默认的npm资源站 `https://registry.npmjs.org/` 服务器距离远且被隔离，当下载有问题可以替换以下地址
 
 - 腾讯云
   ```bash

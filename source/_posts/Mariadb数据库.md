@@ -1,8 +1,8 @@
 ---
 title: "Mariadb数据库"
-excerpt: "安装 mariadb,创建用户"
+excerpt: "重置 root 密码"
 date: 2022-05-25 20:46:25
-updated: 2024-01-08 15:12:00
+updated: 2024-01-09 15:57:00
 categories: 
   - 数据库
 tags:
@@ -11,131 +11,88 @@ tags:
   - 运维
 ---
 
-## ArchWiki
-
-本文参考了[ArchWiki 上的 mariadb](https://wiki.archlinux.org/title/MariaDB)
+本文参考了ArchWiki 上的 [mariadb](https://wiki.archlinux.org/title/MariaDB)
 
 ## 安装 mariadb
 
-### root 提权
+```bash
+sudo su # root 提权
+```
 
-  ```bash
-  sudo su
-  ```
+```bash
+pacman -S mariadb # ArchLinux 上安装 mariadb
+```
 
-### ArchLinux 上安装 mariadb
+```bash
+mariadb-install-db \
+--user=mysql\
+--basedir=/usr \
+--datadir=/var/utils/mysql # 启用进程之前做一些配置
+```
 
-  ```bash
-  pacman -S mariadb
-  ```
+```bash
+systemctl enable --now mariadb  # 启用进程
+```
 
-### 启用进程之前做一些配置
-
-  ```bash
-  mariadb-install-db \
-   --user=mysql\
-   --basedir=/usr \
-   --datadir=/var/utils/mysql
-  ```
-
-### 启用进程
-
-  ```bash
-  systemctl enable --now mariadb
-  ```
-
-### 进入 mariadb
-
-  ```bash
-  mysql -u root -p
-  ```
+```bash
+mysql -u root -p  # 进入 mariadb
+```
 
 ## 初始化
 
-### 新建用户
+```bash
+CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';  # 新建用户
+```
 
-  ```bash
-  CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
-  ```
+```bash
+GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';  # 给予权限
+```
 
-### 给予权限
-
-  ```bash
-  GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
-  ```
-
-### 刷新先前的权限设置
-
-  ```bash
-  FLUSH PRIVILEGES;
-  ```
+```bash
+FLUSH PRIVILEGES; # 刷新先前的权限设置
+```
 
 ## 修改密码
 
-### 跳转到"mysql"数据库
+```bash
+use mysql # 跳转到"mysql"数据库
+```
 
-  ```bash
-  use mysql
-  ```
+```bash
+flush privileges; # 刷新权限
+```
 
-### 刷新权限
-
-  ```bash
-  flush privileges;
-  ```
-
-### 修改
-
-  ```bash
-  ALTER USER 'celiae'@'localhost' IDENTIFIED BY 'new_password';
-  ```
+```bash
+ALTER USER 'celiae'@'localhost' IDENTIFIED BY 'new_password'; # 修改
+```
 
 ## 重置 root 密码
 
-### 停止 mariadb 进程
+```bash
+systemctl stop mariadb  # 停止 mariadb 进程
+```
 
-  ```bash
-  systemctl stop mariadb
-  ```
+```bash
+mysqld_safe --skip-grant-tables --skip-networking & # 启用 mysql 安全模式
+```
 
-### 启用 mysql 安全模式
+```bash
+mysql -u root # 连接进去
+```
 
-  ```bash
-  mysqld_safe --skip-grant-tables --skip-networking &
-  ```
+### 更改密码
 
-### 连接进去
+```bash
+use mysql
+flush privileges;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+exit
+```
 
-  ```bash
-  mysql -u root
-  ```
+```bash
+kill $(cat /var/utils/mysql/$HOSTNAME.pid)  # 杀掉安全模式进程
+```
 
-### 重置密码
-
-  ```bash
-  use mysql
-  ```
-
-  ```bash
-  flush privileges;
-  ```
-
-  ```bash
-  ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
-  ```
-
-  ```bash
-  exit
-  ```
-
-### 杀掉安全模式进程
-
-  ```bash
-  kill $(cat /var/utils/mysql/$HOSTNAME.pid)
-  ```
-
-### 启用 mariadb 进程
-
-  ```bash
-  systemctl start mariadb
-  ```
+```bash
+systemctl start mariadb # 启用 mariadb 进程
+```

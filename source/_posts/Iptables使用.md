@@ -1,8 +1,8 @@
 ---
 title: "Iptables使用"
-excerpt: "基本防火墙"
+excerpt: "根据 ArchWiki 配置一个基础的防火墙"
 date: 2022-05-22 20:46:25
-updated: 2022-06-10 20:46:25
+updated: 2024-01-09 16:02:00
 categories: 
   - 运维
 tags:
@@ -17,16 +17,12 @@ tags:
 
 ### 开启端口
 
-切换 root 用户,提升权限."sudo"命令敲得很累
-
 ```bash
-su
+su  # 切换 root 用户. "sudo"命令敲得很累
 ```
 
-忘记命令,看看之前怎么写的.
-
 ```bash
-iptables -S
+iptables -S # 忘记命令,看看之前怎么写的
 ```
 
 部分结果如下,在根据 ArchWiki 配置了[Simple_stateful_firewall](https://wiki.archlinux.org/title/Simple_stateful_firewall#Prerequisites)之后就是这个效果,注意 TCP 链,这个是 ArchWiki 配置后增添了 TCP 和 UDP 链.

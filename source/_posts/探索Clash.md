@@ -1,6 +1,6 @@
 ---
-title: "探索Clash"
-excerpt: "配置代理,访问真正的Internet"
+title: "Clash基本使用"
+excerpt: "在 /etc/systemd/system/clash.service 中创建如下配置文件"
 date: 2022-06-01 20:46:25
 updated: 2024-01-08 15:08:00
 categories:
@@ -12,25 +12,23 @@ tags:
   - Internet
 ---
 
-## Clash 代理
-
-### 安装 clash
+## 安装 clash
 
 ```bash
 sudo pacman -S clash
 ```
 
-### 获取你的配置文件
+### 获取机场提供的配置文件
 
 ```bash
-sudo mkdir /etc/clash
+sudo mkdir /etc/clash # 创建配置文件存放地
 ```
 
-取到的配置文件放在/etc/clash/下
+配置文件放在/etc/clash/下
 
-### systemd
+## systemd
 
-在 /etc/systemd/system/clash.service 中创建如下配置文件
+创建文件`/etc/systemd/system/clash.service`, 参考模板
 
 ```bash
 [Unit]
@@ -46,7 +44,7 @@ ExecStart=/usr/local/bin/clash -d /etc/clash -f /etc/clash/config.yaml
 WantedBy=multi-user.target
 ```
 
-### 启动
+启动
 
 ```bash
 sudo systemctl enable --now clash.service

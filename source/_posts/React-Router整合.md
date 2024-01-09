@@ -1,8 +1,8 @@
 ---
 title: "React-Router整合"
-excerpt: "React 整合 React-Router"
+excerpt: "npm install react-router-dom"
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:46:00
+updated: 2024-01-09 15:50:00
 categories: 
   - 开发
   - 前端

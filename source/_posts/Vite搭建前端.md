@@ -1,8 +1,8 @@
 ---
 title: "Vite搭建前端"
-excerpt: "不推荐!!Vite更适合测试环境. 用 Shell 的方式一键创建项目, 自动在项目中添加和配置插件"
+excerpt: "Vite是一个专门构建前端项目的手脚架"
 date: 2023-02-26 20:46:25
-updated: 2024-01-08 15:50:00
+updated: 2024-01-09 15:44:00
 categories: 
   - 开发
   - 前端
@@ -13,7 +13,7 @@ tags:
 
 ## Vite
 
-首先使用 Vite 搭建其项目. Vite是一个专门构建前端项目的手脚架, 优点是轻量, 缺点是不稳定, 不适合生产环境(目前). 生产环境推荐官方的 vue-cli .
+首先使用 Vite 搭建其项目. Vite是一个专门构建前端项目的手脚架. 生产环境推荐 vue-cli, 底层用的也是vite, 但有配置向导, 更方便.
 
 ```bash
 npm create vite@latest

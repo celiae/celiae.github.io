@@ -1,8 +1,8 @@
 ---
 title: "Code-OSS"
-excerpt: "VSCode开源版本,前端语言编写而成的IDE"
+excerpt: "VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本."
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:09:00
+updated: 2024-01-09 16:06:00
 categories: 
   - 配置
 tags:
@@ -15,11 +15,11 @@ tags:
 
 ## Code-OSS
 
-人们熟知 vscode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本.它们之间的关系就好比 chrome 与 chromium 的关系,可能我的理解有误,没有仔细了解过.详细搜索为真.
+VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本.它们之间的关系就好比 chrome 与 chromium 的关系.
 
 ### 安装 Code-OSS
 
-用 pacman 安装.当然安装的是开源版本 Code-OSS,而不是 VScode
+用 pacman 安装.当然安装的是开源版本 Code-OSS,而不是 VSCode
 
 ```bash
   sudo pacman -S code

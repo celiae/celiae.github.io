@@ -1,15 +1,14 @@
 ---
 title: "ReactIcons整合"
-excerpt: "React 图标库, 拥有丰富的图标资源, 且样式可控"
+excerpt: "npm install react-icons"
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:31:00
+updated: 2024-01-09 15:49:00
 categories: 
   - 开发
   - 前端
-tags:
-  - React
-  - 前端
 ---
+
+React 图标库, 拥有丰富的图标资源, 且样式可控
 
 ## 安装
 

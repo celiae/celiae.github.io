@@ -1,8 +1,8 @@
 ---
 title: "Redux整合"
-excerpt: "React 整合 Redux 详细过程"
+excerpt: "npm install @reduxjs/toolkit react-redux"
 date: 2022-05-26 20:46:25
-updated: 2024-01-08 15:45:00
+updated: 2024-01-09 15:49:00
 categories: 
   - 开发
   - 前端

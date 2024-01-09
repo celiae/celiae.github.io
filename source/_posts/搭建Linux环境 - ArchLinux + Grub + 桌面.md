@@ -1,8 +1,9 @@
 ---
-title: "最爱的Linux环境与配置"
-excerpt: "总结记录本人个人真实使用的计算机环境"
+title: "搭建Linux环境 - ArchLinux + Grub + 桌面"
+excerpt: "通过工具注入到U盘中，U盘就有了系统，插入U盘到主板，计算机找到
+U盘系统启动，过程也就是加载U盘的Linux操作系统到内存中"
 date: 2022-05-14 20:46:25
-updated: 2024-01-08 15:22:00
+updated: 2024-01-09 15:09:00
 categories:
   - 配置
 tags:
@@ -11,18 +12,17 @@ tags:
   - Linux 
 ---
 
-本文呈现了从操作系统的安装到IDE相关的环境搭建。研究总结官方文档中本人需要的部分，
-借鉴网络上个人或组织的博客，结合多年使用各种操作系统的经验，归纳本人最喜欢计算机环境。
+本文呈现了操作系统环境搭建。总结官方文档中本人需要的部分， 借鉴网络上的博客，总结使用ArchLinux的经验，归纳本人使用的计算机环境。
 
-## 真实场景安装
+## 安装
 
 提前准备：
 
 - 镜像文件 `archlinux-2023.08.01-x86_64.iso`
 - U盘 **>16G**
-- 互联网访问
+- 互联网
 
-ArchLinux 系统更新频繁，镜像文件不必也是`2023.08.01`版本
+ArchLinux 版本根据实际调整，此处用的是`2023.08.01`版本
 
 ### 原理概述
 
@@ -192,7 +192,7 @@ U盘系统的作用基本上到此为止_
 ```bash
 pacman -S base-devel grub efibootmgr os-prober networkmanager \
   bash-completion nano vim git firefox chromium man-pages yarn ntfs-3g \
-  unrar
+  unrar code
 ```
 
 #### 启用网络
@@ -247,17 +247,51 @@ exit  # 退出硬盘系统至 iso 安装系统，或者Ctrl+d
 reboot  # 重启
 ```
 
-## 使用系统
+## 安装后
 
-以上算是完成ArchLinux的最小安装，ArchLinux 滚动更新，更新频率极快，几乎每天都有新版本的软件包上线，
-为了避免系统过于落后于版本造成难以解决的问题，建议至少每个星期更一次，或者每天更一次。
+以上完成ArchLinux的最小安装, 以下是系统偏好配置.
 
-个人电脑离不开桌面，KDE-Plasma/Gnome曾经都用过，
-用来用去计算机整体性能都不如 **i3wm** ，类似于i3wm桌面系统最大的特点是计算机资源占比小，切屏极快。
+对于图形桌面
 
-### i3wm 安装
+- KDE: 配置全面,动画多,硬件要求高,配置复杂 
+- GNOME: 配置简单,使用wayland
+- xfce: 硬件要求低
+- i3wm: 平铺布局,资源占用少,难学,手指吃亏
 
-安装i3wm，一个Display Manager，和一个虚拟终端，默认配置的 i3wm 就可以。
+### 图形桌面
+
+图形桌面至少需要安装两样: 桌面软件/Display Manager. Display Manager用于启动桌面.
+
+#### KDE
+
+```shell
+sudo pacman -S plasma sddm konsole dolphin
+sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 
+sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra   
+sudo systemctl enable sddm.service
+```
+
+#### GNOME
+
+```shell
+sudo pacman -S gnome-extra gdm
+sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 
+sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra   
+sudo systemctl enable gdm.service
+```
+
+#### Xfce
+
+```shell
+sudo pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
+sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei # 
+sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra   
+sudo systemctl enable lightdm.service
+```
+
+#### i3wm
+
+默认配置的 i3wm。
 
 ```shell
 sudo pacman -S i3-wm lightdm lightdm-gtk-greeter alacritty
@@ -287,6 +321,7 @@ JAVA_HOME=/usr/utils/jvm/default
 #### 配置colemak键盘布局
 
 两种方式：
+
 1. xorg，推荐。够稳定，切换不方便，较底层，适合长期colemak用户
 2. 输入法，需要输入法启动，退格键没有映射
 
@@ -359,13 +394,4 @@ pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-```
-
-### IDE安装
-
-VSCode用前端语言写的,性能不佳，打开大项目时，补全功能会失效，Vim/Emacs不易学习。
-JetBrains全家桶使用java编写，各方面优秀，许可证可通过魔法绕过。
-
-```shell
-yay -S intellij-idea-ultimate-edition webstorm
 ```
