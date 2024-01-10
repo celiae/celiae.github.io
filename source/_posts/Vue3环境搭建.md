@@ -146,8 +146,11 @@ npm i dayjs
 ```ts
 import 'dayjs/locale/zh-cn'
 ```
+
 #### nprogress
+
 安装
+
 ```bash
 npm i nprogress
 ```
@@ -167,6 +170,48 @@ router.afterEach(() => {
   NProgress.done(); // 完成进度条，页面加载完成后停止进度条
 });
 ```
+
+#### axios
+
+安装
+```bash
+npm install axios
+```
+
+在`main.ts`配置默认地址
+```ts
+axios.create({ baseURL: 'http://localhost:3555' })
+```
+
+post
+```js
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+Forms
+```js
+const {data} = await axios.post('https://httpbin.org/post', {
+    firstName: 'Fred',
+    lastName: 'Flintstone',
+    orders: [1, 2, 3],
+    photo: document.querySelector('#fileInput').files
+  }, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  }
+)
+```
+
 ### 基本配置
 修改`reservoir-vue/index.html`标题
 ```html
