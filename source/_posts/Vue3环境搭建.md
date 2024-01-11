@@ -180,7 +180,7 @@ npm install axios
 
 在`main.ts`配置默认地址
 ```ts
-axios.create({ baseURL: 'http://localhost:3555' })
+axios.defaults.baseURL='http://localhost:3555'
 ```
 
 post
