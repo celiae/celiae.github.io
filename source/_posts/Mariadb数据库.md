@@ -1,6 +1,6 @@
 ---
-title: "Mariadb数据库"
-excerpt: "重置 root 密码"
+title: Mariadb数据库
+excerpt: 重置 root 密码
 date: 2022-05-25 20:46:25
 updated: 2024-01-09 15:57:00
 categories: 

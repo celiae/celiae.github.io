@@ -1,6 +1,6 @@
 ---
-title: "TailwindCSS整合"
-excerpt: "npm install -D tailwindcss postcss autoprefixer"
+title: TailwindCSS整合
+excerpt: npm install -D tailwindcss postcss autoprefixer
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 15:48:00
 categories: 

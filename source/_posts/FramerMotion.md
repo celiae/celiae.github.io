@@ -1,6 +1,6 @@
 ---
-title: "FramerMotion"
-excerpt: "npm install framer-motion"
+title: FramerMotion
+excerpt: npm install framer-motion
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 16:04:00
 categories: 

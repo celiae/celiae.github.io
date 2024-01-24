@@ -1,6 +1,6 @@
 ---
-title: "MaterialUi组件库"
-excerpt: "npm install @mui/material @emotion/react @emotion/styled"
+title: MaterialUi组件库
+excerpt: npm install @mui/material @emotion/react @emotion/styled
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 15:57:00
 categories:

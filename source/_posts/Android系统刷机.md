@@ -1,6 +1,6 @@
 ---
-title: "Android系统刷机"
-excerpt: "小众的手机型号很难有较多的rom包(系统)支持"
+title: Android系统刷机
+excerpt: 小众的手机型号很难有较多的rom包(系统)支持
 date: 2022-06-01 20:46:25
 updated: 2024-01-09 15:09:00
 categories:

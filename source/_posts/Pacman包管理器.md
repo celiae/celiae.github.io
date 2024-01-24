@@ -1,6 +1,6 @@
 ---
-title: "Pacman包管理器"
-excerpt: "ArchLinux 的包管理器"
+title: Pacman包管理器
+excerpt: ArchLinux 的包管理器
 date: 2022/10/15 20:46:25
 updated: 2024/01/09 15:51:00
 categories: 

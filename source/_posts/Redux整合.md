@@ -1,6 +1,6 @@
 ---
-title: "Redux整合"
-excerpt: "npm install @reduxjs/toolkit react-redux"
+title: Redux整合
+excerpt: npm install @reduxjs/toolkit react-redux
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 15:49:00
 categories: 

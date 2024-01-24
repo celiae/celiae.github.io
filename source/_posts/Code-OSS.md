@@ -1,6 +1,6 @@
 ---
-title: "Code-OSS"
-excerpt: "VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本."
+title: Code-OSS
+excerpt: VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 16:06:00
 categories: 

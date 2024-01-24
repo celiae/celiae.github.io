@@ -1,6 +1,6 @@
 ---
-title: "Iptables使用"
-excerpt: "根据 ArchWiki 配置一个基础的防火墙"
+title: Iptables使用
+excerpt: 根据 ArchWiki 配置一个基础的防火墙
 date: 2022-05-22 20:46:25
 updated: 2024-01-09 16:02:00
 categories: 

@@ -1,6 +1,6 @@
 ---
-title: "Vite搭建前端"
-excerpt: "Vite是一个专门构建前端项目的手脚架"
+title: Vite搭建前端
+excerpt: Vite是一个专门构建前端项目的手脚架
 date: 2023-02-26 20:46:25
 updated: 2024-01-09 15:44:00
 categories: 

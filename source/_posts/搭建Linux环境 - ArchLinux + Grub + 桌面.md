@@ -1,7 +1,6 @@
 ---
-title: "搭建Linux环境 - ArchLinux + Grub + 桌面"
-excerpt: "通过工具注入到U盘中，U盘就有了系统，插入U盘到主板，计算机找到
-U盘系统启动，过程也就是加载U盘的Linux操作系统到内存中"
+title: 搭建Linux环境 - ArchLinux + Grub + 桌面
+excerpt: 通过工具注入到U盘中，U盘就有了系统，插入U盘到主板，计算机找到U盘系统启动，过程也就是加载U盘的Linux操作系统到内存中
 date: 2022-05-14 20:46:25
 updated: 2024-01-09 15:09:00
 categories:

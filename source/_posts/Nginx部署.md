@@ -1,6 +1,6 @@
 ---
-title: "Nginx部署"
-excerpt: "在 docker 安装 nginx"
+title: Nginx部署
+excerpt: 在 docker 安装 nginx
 date: 2022-05-15 20:46:25
 updated: 2024-01-09 15:56:00
 categories:

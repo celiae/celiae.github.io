@@ -1,6 +1,6 @@
 ---
-title: "Yay-ArchLinux包管理器"
-excerpt: "yay就是用来下载那些不开源包的.也可以用yay代替pacman"
+title: Yay-ArchLinux包管理器
+excerpt: yay就是用来下载那些不开源包的.也可以用yay代替pacman
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 15:40:00
 categories: 

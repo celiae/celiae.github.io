@@ -1,6 +1,6 @@
 ---
-title: "ReactIcons整合"
-excerpt: "npm install react-icons"
+title: ReactIcons整合
+excerpt: npm install react-icons
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 15:49:00
 categories: 
