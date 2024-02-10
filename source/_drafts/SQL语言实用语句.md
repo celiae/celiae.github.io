@@ -34,3 +34,20 @@ select distinct(NUM) from
     from IS_ARCHIVE.IS_FILES
 );
 ```
+
+### 问题2:
+
+1. 统计多表元组总数
+
+```sql
+-- 用 union 只能连接
+SELECT COUNT(0) AS TotalRows
+FROM (
+    SELECT id FROM Table1
+    UNION
+    SELECT id FROM Table2
+    UNION
+    SELECT id FROM Table3
+    -- 添加更多表的 UNION 查询
+) AS CombinedTables;
+```
