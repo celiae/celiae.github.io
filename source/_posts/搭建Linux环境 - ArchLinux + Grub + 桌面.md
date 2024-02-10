@@ -96,12 +96,12 @@ lsblk # 列出所有磁盘
 
 利用 `cfdisk` 工具,打开既有手册，**谨慎**分区硬盘,建议分区布局：
 
-| 类型    | 假想设备路径    | 挂载点       | 推荐空间 |
-|-------|-----------|-----------|------|
-| 启动盘   | /dev/sda1 | /boot/efi | 1G   |
-| 内存交换盘 | /dev/sda2 | [SWAP]    | 2G   |
-| 系统盘   | /dev/sda3 | /         | 100G |
-| 用户盘   | /dev/sda4 | /home     | 200G |
+| 类型    | 假想设备路径    | 挂载点    | 推荐空间 |
+|-------|-----------|--------|------|
+| 启动盘   | /dev/sda1 | /boot  | 1G   |
+| 内存交换盘 | /dev/sda2 | [SWAP] | 2G   |
+| 系统盘   | /dev/sda3 | /      | 100G |
+| 用户盘   | /dev/sda4 | /home  | 200G |
 
 #### 注意
 
@@ -126,7 +126,7 @@ swapon /dev/sda2 #选择你的内存交换盘（swap分区）
 mkfs.btrfs /dev/sda3  #选择你的系统盘（根分区）
 mkfs.btrfs /dev/sda4  #选择你的用户盘（home分区）
 mount /dev/sda3 /mnt  #挂载根分区，系统安装到此
-mount --mkdir /dev/sda1 /mnt/boot/efi #挂载EFI分区，grub安装到此
+mount --mkdir /dev/sda1 /mnt/boot #挂载EFI分区，grub安装到此
 mount --mkdir /dev/sda4 /mnt/home #挂载HOME分区，独立出普通用户家目录
 ```
 
@@ -252,7 +252,7 @@ reboot  # 重启
 
 对于图形桌面
 
-- KDE: 配置全面,动画多,硬件要求高,配置复杂 
+- KDE: 配置全面,动画多,硬件要求高,配置复杂
 - GNOME: 配置简单,使用wayland
 - xfce: 硬件要求低
 - i3wm: 平铺布局,资源占用少,难学,手指吃亏
@@ -314,7 +314,7 @@ QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 EDITOR=nano
-JAVA_HOME=/usr/utils/jvm/default
+JAVA_HOME=/usr/lib/jvm/default
 ```
 
 #### 配置colemak键盘布局

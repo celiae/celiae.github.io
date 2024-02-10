@@ -25,12 +25,10 @@ VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版�
   sudo pacman -S code
 ```
 
-### Code-OSS 默认的插件源不是微软的 VSCode 插件源,需要的化可以安装 AUR 包 code-marketplace
-
-使用 VSCode 插件源
+使用 VSCode 插件源, Code-OSS 默认的插件源不是微软的 VSCode 插件源,需要的化可以安装 AUR 包 code-marketplace
 
 ```bash
-yay -S code-marketplace
+yay -S code-marketplace # 
 ```
 
 ### 启动 Code-OSS

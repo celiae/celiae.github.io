@@ -1,6 +1,6 @@
 ---
 title: Virtualbox虚拟机
-excerpt: 要在 Arch 上使用 virtualbox 最简单就是安装`virtualbox-host-modules-arch`这个包
+excerpt: 要在 Arch 上使用 virtualbox 最简单就是安装这个包
 date: 2022-07-08 20:46:25
 updated: 2024-01-09 15:45:00
 categories: 
