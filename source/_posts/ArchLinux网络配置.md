@@ -5,11 +5,9 @@ date: 2022-05-26 15:15:00
 updated: 2024-01-09 16:06:00
 categories: 
    - 运维
-tags:
-   - Linux 
-   - ArchLinux 
-   - NetworkManager
    - 网络
+tags:
+   - Linux
 ---
 
 ## NetworkManager WIFI 联网

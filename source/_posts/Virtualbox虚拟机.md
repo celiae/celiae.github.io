@@ -5,9 +5,8 @@ date: 2022-07-08 20:46:25
 updated: 2024-01-09 15:45:00
 categories: 
   - 运维
+  - 配置
 tags:
-  - Virtualbox
-  - ArchLinux
   - 虚拟机
 ---
 

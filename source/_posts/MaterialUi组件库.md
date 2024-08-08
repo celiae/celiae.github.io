@@ -7,10 +7,8 @@ categories:
   - 开发
   - 前端
 tags:
-  - React
   - Mui
   - 组件
-  - UI
 ---
 
 ## 安装

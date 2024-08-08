@@ -7,9 +7,6 @@ categories:
   - 开发
   - 前端
 tags:
-  - npm
-  - nodejs
-  - 前端
   - 包管理器
 ---
 

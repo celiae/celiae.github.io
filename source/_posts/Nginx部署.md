@@ -5,10 +5,9 @@ date: 2022-05-15 20:46:25
 updated: 2024-01-09 15:56:00
 categories:
   - 运维
+  - 配置
 tags:
   - nginx
-  - ArchLinux
-  - Linux
   - Web
 ---
 

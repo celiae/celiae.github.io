@@ -5,6 +5,7 @@ date: 2024-01-18 14:40:00
 updated: 2024-01-18 14:40:00
 categories:
   - 运维
+  - 配置
 tags:
   - Linux
 ---

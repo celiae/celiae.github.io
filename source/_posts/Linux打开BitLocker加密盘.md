@@ -4,11 +4,12 @@ excerpt: 在Linux中，访问Windows下通过BitLocker加密的硬盘分区
 date: 2024-08-08 15:09:00
 updated: 2024-08-08 15:09:00
 categories:
+  - 运维
   - 配置
 tags:
   - ArchLinux
   - 运维
-  - Linux 
+  - Linux
 ---
 
 在Linux中，访问Windows下通过BitLocker加密的硬盘分区

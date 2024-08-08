@@ -4,11 +4,10 @@ excerpt: 重置 root 密码
 date: 2022-05-25 20:46:25
 updated: 2024-01-09 15:57:00
 categories: 
+  - 运维
   - 数据库
 tags:
-  - Mariadb
   - Database
-  - 运维
 ---
 
 本文参考了ArchWiki 上的 [mariadb](https://wiki.archlinux.org/title/MariaDB)

@@ -5,9 +5,9 @@ date: 2022-05-22 20:46:25
 updated: 2024-01-09 16:02:00
 categories: 
   - 运维
+  - 安全
 tags:
   - Linux
-  - ArchLinux
   - 安全
 ---
 

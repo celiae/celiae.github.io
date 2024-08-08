@@ -8,10 +8,6 @@ categories:
 tags:
   - Android
   - Pixel Experience
-  - fastboot
-  - adb
-  - twrp
-  - Linux
 ---
 
 ## 注意

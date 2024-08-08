@@ -4,13 +4,11 @@ excerpt: VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的�
 date: 2022-05-26 20:46:25
 updated: 2024-01-09 16:06:00
 categories: 
+  - 运维
   - 配置
 tags:
   - Code-OSS
-  - IDE
-  - ArchLinux
   - Linux
-  - 工具
 ---
 
 ## Code-OSS
