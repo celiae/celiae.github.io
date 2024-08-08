@@ -2,7 +2,7 @@
 title: 搭建Linux环境 - ArchLinux + Grub + 桌面
 excerpt: 通过工具注入到U盘中，U盘就有了系统，插入U盘到主板，计算机找到U盘系统启动，过程也就是加载U盘的Linux操作系统到内存中
 date: 2022-05-14 20:46:25
-updated: 2024-01-09 15:09:00
+updated: 2024-08-08 15:09:00
 categories:
   - 配置
 tags:
@@ -246,7 +246,7 @@ exit  # 退出硬盘系统至 iso 安装系统，或者Ctrl+d
 reboot  # 重启
 ```
 
-## 安装后
+## 环境部署
 
 以上完成ArchLinux的最小安装, 以下是系统偏好配置.
 
@@ -384,9 +384,57 @@ sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
 mkinitcpio -p linux
 ```
 
-### Yay 包管理器
+## 包管理器
 
-使用魔法上网后可以安装且使用 `yay`，和 `pacman` 使用方式基本一样，即可管理官方软件包，也可管理AUR包。
+ArchLinux 的包管理器
+
+### Pacman包管理器
+
+更新
+
+```bash
+sudo pacman -Sy # 刷新未更新的数据库
+```
+
+```bash
+sudo pacman -Syy  # 强制刷新所有数据库
+```
+
+```bash
+sudo pacman -Syu  # 更新系统
+```
+
+```bash
+sudo pacman -Syyu # 更新系统并强制同步更所有数据库
+```
+
+查询
+
+```bash
+sudo pacman -Qi vim # 包信息
+```
+
+```bash
+sudo pacman -Ql vim # 包所包含的所有文件
+```
+
+```bash
+sudo pacman -F nc # 通过命令查包
+```
+
+```bash
+sudo pacman -Fy # 更新包信息数据库
+```
+
+`安装` code-oss 代码编辑器
+
+```bash
+sudo pacman -S code # 安装 code-oss
+```
+
+### yay - AUR helper (AUR 包管理器)
+
+安装未被收录在核心软件包的软件，通常下载 github 的 release 软件。使用魔法上网后可以安装且使用 `yay`，和 `pacman` 使用方式基本一样，即可管理官方软件包，也可管理AUR包,可以用`yay`代替`pacman`。
 
 ```shell
 pacman -S --needed git base-devel
@@ -394,3 +442,23 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+
+如遇到：
+```bash
+error: telegram-desktop: signature from "Jiachen YANG (Arch Linux Packager Signing Key) <farseerfc@archlinux.org>" is marginal trust
+:: File /var/cache/pacman/pkg/telegram-desktop-4.0.2-4-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+Do you want to delete it? [Y/n]
+error: failed to commit transaction (invalid or corrupted package)
+Errors occurred, no packages were upgraded.
+-> error installing repo packages
+```
+
+在很久没更新或者重装系统时经常会遇到,我们应该重新安装`archlinux-keyring`
+
+```bash
+sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
+```
+
+参考：
+- [Github yay](https://github.com/Jguer/yay)
+- [AUR](https://wiki.archlinux.org/title/Arch_User_Repository)
