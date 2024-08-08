@@ -17,7 +17,7 @@ head:
         # when there is not enough space to display full name
         short_name: Ceblog
         # The start URL of the web application
-        start_url: http://49.234.56.110:83
+        start_url: https://celiae.github.io
         # The default theme color for the application
         theme_color: "#162033"
         # A placeholder background color for the application page to display

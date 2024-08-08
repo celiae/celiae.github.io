@@ -7,7 +7,6 @@ categories:
   - 运维
   - 配置
 tags:
-  - ArchLinux
   - 运维
   - Linux
 ---

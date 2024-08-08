@@ -8,9 +8,7 @@ categories:
   - 配置
 tags:
   - Docker
-  - Linux
   - 部署
-  - ArchLinux
 ---
 
 ## Docker

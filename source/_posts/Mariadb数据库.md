@@ -8,6 +8,7 @@ categories:
   - 数据库
 tags:
   - Database
+  - 加速
 ---
 
 本文参考了ArchWiki 上的 [mariadb](https://wiki.archlinux.org/title/MariaDB)

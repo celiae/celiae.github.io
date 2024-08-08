@@ -7,7 +7,7 @@ categories:
   - 运维
   - 配置
 tags:
-  - ArchLinux安装
+  - 系统安装
 ---
 
 本文呈现了操作系统环境搭建。总结官方文档中本人需要的部分， 借鉴网络上的博客，总结使用ArchLinux的经验，归纳本人使用的计算机环境。
@@ -461,3 +461,7 @@ sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
 参考：
 - [Github yay](https://github.com/Jguer/yay)
 - [AUR](https://wiki.archlinux.org/title/Arch_User_Repository)
+
+## 经验
+
+- 遇到系统bug不要第一时间想到重装，重装成本很高，如果不做备份，原先的系统所有配置都将清0，任何bug都能解决，就好比没有安全的系统（哲学）。享受解决的过程，解决后整理到博客里以供日后加速。

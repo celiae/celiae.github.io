@@ -7,8 +7,8 @@ categories:
   - 运维
   - 配置
 tags:
-  - nginx
-  - Web
+  - 反向代理
+  - 负载均衡
 ---
 
 ## 安装 nginx
