@@ -12,7 +12,7 @@ categories:
 
 Git 帮助单人程序员异地开发，多人团队合作开发. 个人目前使用到多个remote的拉取推送.
 
-### 主流关键词
+### 关键词
 
 - Git 版本控制工具
 - Github 国际代码托管平台
@@ -21,11 +21,23 @@ Git 帮助单人程序员异地开发，多人团队合作开发. 个人目前�
 #### main 和 master
 我在新手时期很头疼, 世界公认的主分支范式到底是main 还是 master? git工具自身使用的是master, 而github又使用main. 
 同时使用git&github, 一不注意就会又两个主分支. 原来, master 在西方文化中含有种族歧视的意义, 所以github平台更改了他们的主分支名称.
-master -> main. 这就是为什么, 以前的github用master, 而现在用main. 我开始全部用main作主分支.
+master -> main. 这就是为什么以前的github用master, 而现在用main. 我开始全部用main作主分支.
 
-## 客户端使用
+### 拉取代码
 
-研究用于开发的主机是如何初始化Git, 配置远端同步, 代码更新流程.
+```bash
+git pull origin master:brantest #将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并
+```
+
+我在github上手动添加了actions文件时，再push项目，以为会“everything is up to date"，但：
+```bash
+error: failed to push some refs to 'github.com:celiae/celiae.github.io.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+```
+这个问题就是github上有更新的版本，不再允许你push,所以先pull
 
 ### 本地建库
 

@@ -165,9 +165,9 @@ search:
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 comment:
-    type: changyan
-    app_id: cyx5mmmAv
-    conf: 896fc6ad91ba8dcbf9795f4da2285c81
+    # type: changyan
+    # app_id: 
+    # conf: 
 
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
@@ -179,9 +179,9 @@ donates:
 #        url: ''
     # Alipay donate button configurations
     -
-        type: alipay
+        # type: alipay
         # Alipay qrcode image URL
-        qrcode: '/img/alipay.jpeg'
+        # qrcode: ''
     # "Buy me a coffee" donate button configurations
 #    -
 #        type: buymeacoffee
@@ -207,7 +207,7 @@ donates:
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
 share:
-    type: sharejs
+    # type: sharejs
     # URL to the ShareThis share plugin script
 #    install_url: ''
 # Sidebar configurations.
