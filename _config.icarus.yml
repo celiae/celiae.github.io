@@ -178,7 +178,7 @@ donates:
         # URL to the "Afdian.net" personal page
 #        url: ''
     # Alipay donate button configurations
-    -
+    #-
         # type: alipay
         # Alipay qrcode image URL
         # qrcode: ''

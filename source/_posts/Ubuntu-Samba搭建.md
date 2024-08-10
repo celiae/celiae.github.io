@@ -1,6 +1,6 @@
 ---
 title: Ubuntu-Samba搭建
-excerpt: 
+excerpt: 直接命令展示
 date: 2024-01-18 14:40:00
 updated: 2024-01-18 14:40:00
 categories:
@@ -10,7 +10,7 @@ tags:
   - Linux
 ---
 
-## 
+直接命令展示
 
 ```bash
 sudo apt update
