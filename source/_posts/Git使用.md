@@ -2,7 +2,7 @@
 title: Git使用
 excerpt: 配置密钥对,根据提示生成密钥对存放在指定位置,默认在~/.ssh 下
 date: 2022-05-14 20:46:25
-updated: 2024-02-10 16:05:00
+updated: 2024-08-10 16:05:00
 categories:
   - 开发
   - 版本控制
@@ -29,7 +29,7 @@ master -> main. 这就是为什么以前的github用master, 而现在用main. �
 git pull origin master:brantest #将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并
 ```
 
-我在github上手动添加了actions文件时，再push项目，以为会“everything is up to date"，但：
+示例情形：我在github上手动添加了actions文件时，再push项目，以为会“everything is up to date"，但：
 ```bash
 error: failed to push some refs to 'github.com:celiae/celiae.github.io.git'
 hint: Updates were rejected because the remote contains work that you do not
@@ -37,7 +37,7 @@ hint: have locally. This is usually caused by another repository pushing to
 hint: the same ref. If you want to integrate the remote changes, use
 hint: 'git pull' before pushing again.
 ```
-这个问题就是github上有更新的版本，不再允许你push,所以先pull
+注意核对两边的commit ID. 这个问题就是github上有更新的版本, 本地是旧版本，不再允许你push,所以先pull
 
 ### 本地建库
 
@@ -110,7 +110,8 @@ git push --set-upstream origin main:dev # 将本地的main分支推送到远端d
 git push -u origin main:dev # 更新分支. 将本地的main分支推送到远端dev分支
 ```
 
-## Git Server
+## 部署简易 Git Server
+此方法可以在比较低能的机器上搭建一个简易的 Git Server，原理很像 FTP/SCP。有能力的机器推荐使用 GitLab， GitLab的搭建方法可搜。
 
 ### 守护进程
 
