@@ -10,7 +10,7 @@ tags:
   - Linux
 ---
 
-直接命令展示
+直接命令展示:
 
 ```bash
 sudo apt update

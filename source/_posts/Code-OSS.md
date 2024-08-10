@@ -27,14 +27,7 @@ VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版�
 
 ```bash
 yay -S code-marketplace # 
-```
-
-### 启动 Code-OSS
-
-在终端中启动
-
-```bash
-code .
+code .  #在终端中启动
 ```
 
 ### Python `Import`
@@ -53,3 +46,7 @@ pip install scrapy
 python3 -m venv tutorial-env
 pip install scrapy
 ```
+
+### Proxy 代理
+
+如果在Linux上已经配置 ..._proxy 全局环境变量，默认就是，不用管。在Windows上需要改

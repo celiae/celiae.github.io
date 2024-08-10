@@ -393,17 +393,8 @@ ArchLinux 的包管理器
 
 ```bash
 sudo pacman -Sy # 刷新未更新的数据库
-```
-
-```bash
 sudo pacman -Syy  # 强制刷新所有数据库
-```
-
-```bash
 sudo pacman -Syu  # 更新系统
-```
-
-```bash
 sudo pacman -Syyu # 更新系统并强制同步更所有数据库
 ```
 
@@ -411,17 +402,8 @@ sudo pacman -Syyu # 更新系统并强制同步更所有数据库
 
 ```bash
 sudo pacman -Qi vim # 包信息
-```
-
-```bash
 sudo pacman -Ql vim # 包所包含的所有文件
-```
-
-```bash
 sudo pacman -F nc # 通过命令查包
-```
-
-```bash
 sudo pacman -Fy # 更新包信息数据库
 ```
 
