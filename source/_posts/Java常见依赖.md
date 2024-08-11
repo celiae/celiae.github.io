@@ -2,7 +2,7 @@
 title: Java常见依赖
 excerpt: Spring Boot 的 BOM（Bill Of Materials），用于管理 Spring Boot 项目中所有依赖的版本
 date: 2024-08-10 17:25:00
-updated: 2024-08-10 17:25:00
+updated: 2024-08-11 12:25:00
 categories:
   - 开发
   - 后端
