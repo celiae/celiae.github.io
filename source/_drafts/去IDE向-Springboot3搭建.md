@@ -1,6 +1,6 @@
 ---
 title: 去IDE向-Springboot3搭建
-excerpt: 
+excerpt: java
 date: 2024-01-15 14:40:00
 updated: 2024-01-15 14:40:00
 categories:
