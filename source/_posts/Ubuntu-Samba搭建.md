@@ -10,15 +10,12 @@ tags:
   - Linux
 ---
 
-直接命令展示:
+首先安装 Samba 服务:
 
 ```bash
 sudo apt update
 sudo apt install samba
-```
-
-```bash
-sudo nano /etc/samba/smb.conf
+sudo nano /etc/samba/smb.conf #编辑 Samba 配置文件
 ```
 
 ```bash
@@ -38,6 +35,8 @@ workgroup = WORKGROUP
 ```
 
 ```bash
-sudo smbpasswd -a username
-sudo service smbd restart
+mkdir -p /path/to/shared_folder #创建配置文件中指定的共享目录
+sudo smbpasswd -a username  #将你的 Ubuntu 用户添加到 Samba 用户数据库中
+sudo service smbd restart #配置完成后，重启 Samba 服务以使更改生效
+sudo ufw allow samba  #如果你的系统启用了防火墙，你需要允许 Samba 服务通过防火墙
 ```

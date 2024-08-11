@@ -1,6 +1,6 @@
 ---
-title: Springboot3后端环境搭建
-excerpt: 小众的手机型号很难有较多的rom包(系统)支持
+title: 去IDE向-Springboot3搭建
+excerpt: 
 date: 2024-01-15 14:40:00
 updated: 2024-01-15 14:40:00
 categories:

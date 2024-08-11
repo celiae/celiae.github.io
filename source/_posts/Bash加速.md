@@ -1,6 +1,6 @@
 ---
 title: Bash加速
-excerpt: VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版本
+excerpt: 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。
 date: 2024-08-08 20:08:25
 updated: 2024-08-08 20:08:25
 categories: 

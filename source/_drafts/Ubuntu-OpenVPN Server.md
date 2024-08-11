@@ -1,6 +1,6 @@
 ---
 title: Ubuntu-OpenVPN Server
-excerpt: 小众的手机型号很难有较多的rom包(系统)支持
+excerpt: 
 date: 2024-01-16 11:28:00
 updated: 2024-01-16 11:28:00
 categories:

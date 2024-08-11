@@ -23,12 +23,18 @@ VSCode 是当今很流行的代码编辑器,而 Code-OSS 则是它的开源版�
   sudo pacman -S code
 ```
 
-使用 VSCode 插件源, Code-OSS 默认的插件源不是微软的 VSCode 插件源,需要的化可以安装 AUR 包 code-marketplace
+### 插件
+
+Code-OSS 默认的插件源不是微软的 VSCode 插件源, 使用 VSCode 插件源需安装 AUR 包 code-marketplace
 
 ```bash
 yay -S code-marketplace # 
 code .  #在终端中启动
 ```
+
+之后打开某些代码文件时，会提示你安装推荐的插件，一般是官方推荐的，直接同意就行了。
+
+开发时会用到数据库，个人推荐使用 Weijian Chen 作者的 MySQL 等插件, 这些插件对应的数据库可以直接在 Code 上操作数据库，配合 SQL 补全非常好用。
 
 ### Python `Import`
 
