@@ -26,3 +26,14 @@ sudo ls /mnt/bitlocker
 sudo mount -o loop,rw /mnt/bitlocker/dislocker-file /mnt/mount
 sudo ls /mnt/mount
 ```
+
+ArchLinux 在更新系统后可能会出现找不到特定版本的 `libruby.so` 包的问题，可以这样解决
+
+```bash
+dislocker: error while loading shared libraries: libruby.so.3.0: cannot open shared object file: No such file or directory
+
+cd /usr/lib/
+sudo ln -s libruby.so libruby.so.3.0
+```
+
+系统更新后，我的 libruby 升级到了 3.2 版本，而 dislocker 还在寻找 3.0 版本，于是通过软链接强行让他找到

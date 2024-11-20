@@ -78,3 +78,12 @@ shopt -s histverify #替换前确认
 ```
 
 > 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。shopt 是 "shell options" 的缩>写，通过它你可以查看和设置不同的 shell 选项。
+
+
+### SSH
+
+```bash
+ssh-keygen  #生成公私钥对文件
+ssh-keygen -p -f ~/.ssh/id_rsa  #修改私钥密码
+openssl rand -base64 16 #随机生成一个16长度的密码
+```

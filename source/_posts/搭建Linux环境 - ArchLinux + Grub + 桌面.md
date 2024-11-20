@@ -63,10 +63,10 @@ dd if=archlinux-2023.08.01-x86_64.iso of=/dev/sda bs=4096   #使用dd工具
 U盘最先，也可以使用**覆盖启动**U盘。BIOS设置后，进入U盘的GRUB，选择 ArchLinux Install 并回车，
 系统加载，直接到zsh命令行。
 
-#### 关闭系统自动选择镜像源
+#### 选择中国镜像源
 
 ```bash
-systemctl stop reflector.service
+reflector -c china > /etc/pacman.d/mirrorlist
 ```
 
 #### UEFI or Legacy
@@ -95,19 +95,19 @@ lsblk # 列出所有磁盘
 
 利用 `cfdisk` 工具,打开既有手册，**谨慎**分区硬盘,建议分区布局：
 
-| 类型    | 假想设备路径    | 挂载点    | 推荐空间 |
-|-------|-----------|--------|------|
-| 启动盘   | /dev/sda1 | /boot  | 1G   |
-| 内存交换盘 | /dev/sda2 | [SWAP] | 2G   |
-| 系统盘   | /dev/sda3 | /      | 100G |
-| 用户盘   | /dev/sda4 | /home  | 200G |
+| 名称  | 类型 | 假想设备路径    | 挂载点    | 推荐空间 |
+|-------|--|-----------|--------|------|
+| 启动盘  | BIOS boot 或 EFI System| /dev/sda1 | /boot  | 1G   |
+| 内存交换盘|Linux swap | /dev/sda2 | [SWAP] | 2G   |
+| 系统盘   |Linux filesystem| /dev/sda3 | /      | 100G |
+| 用户盘  |Linux filesystem | /dev/sda4 | /home  | 200G |
 
-#### 注意
+##### 注意
 
 - `cfdisk` 工具操作磁盘, 磁盘文件"/dev/sda"根据自己的情况进行修改.
   实际上挂载点是灵活的,只要保证其他分区挂载点嵌套在根目录内都可
-- 启动盘最好是1G左右，增加系统启动时的稳定性和容错率。启动盘是根基，若容量过小，
-  随着系统数量增加和数据增加，可能会导致启动异常，极难恢复。
+- 启动1G左右，增加系统容错率。启动盘是根基，若容量过小，
+  随着系统数量增加，可能会导致启动异常，极难恢复。
 - 内存交换盘的设置对于个人电脑没有要求，是个可选项。在服务器里是必备的。
 - 系统盘类似于 Windows 的C盘，数据量随着系统使用时长增加而增加
 - 用户盘通常存放系统普通使用者的数据，可选项，为分担系统盘存储压力以及方便移植从而独立出来。
@@ -119,8 +119,8 @@ cfdisk /dev/sda
 #### 挂接硬盘
 
 ```bash
-mkfs.vfat /dev/sda1 #选择你的启动盘（efi分区）
-mkfs.swap /dev/sda2 #选择你的内存交换盘（swap分区）
+mkfs.fat -F 32 /dev/sda1 #选择你的启动盘（efi分区） BIOS模式启动也要这个分区，但不格式化
+mkswap /dev/sda2 #选择你的内存交换盘（swap分区）
 swapon /dev/sda2 #选择你的内存交换盘（swap分区）
 mkfs.btrfs /dev/sda3  #选择你的系统盘（根分区）
 mkfs.btrfs /dev/sda4  #选择你的用户盘（home分区）
@@ -153,16 +153,6 @@ exit #或者 Ctrl + d
 ping archlinux.org  # 检测是否联网，有正确返回信息则成功
 date  # 显示当前时间
 timedatectl set-ntp true  # 如果时间不正确,请时间矫正
-```
-
-#### 换源
-
-镜像源是下载软件包的服务器地址, 打开pacman镜像配置文件，把 **China** 那一块 URL 移到文件最上面。
-通常每个地址有两种协议（**http**和**https**）,建议删掉**http**的地址,也就是不使用http协议的地址。
-如此 pacman 则会优先从 China 源下载,速度更快。文件编辑器可使用 nano/vim/emacs 等
-
-```bash
-vim /etc/pacman.d/mirrorlist
 ```
 
 ### 安装系统包
@@ -226,7 +216,7 @@ mkinitcpio -P
 
 ```bash
 grub-install --target=x86_64-efi \
---efi-directory=/boot/efi --bootloader-id=GRUB
+--efi-directory=/boot --bootloader-id=GRUB
 ```
 
 如果你需要双系统,请 os-prober 自动扫描双系统:允许 grub 检测系统. true 改为 false,并取消注释
@@ -443,7 +433,3 @@ sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
 参考：
 - [Github yay](https://github.com/Jguer/yay)
 - [AUR](https://wiki.archlinux.org/title/Arch_User_Repository)
-
-## 经验
-
-- 遇到系统bug不要第一时间想到重装，重装成本很高，如果不做备份，原先的系统所有配置都将清0，任何bug都能解决，就好比没有安全的系统（哲学）。享受解决的过程，解决后整理到博客里以供日后加速。
