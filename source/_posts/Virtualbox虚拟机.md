@@ -1,16 +1,4 @@
----
-title: Virtualbox虚拟机
-excerpt: 要在 Arch 上使用 virtualbox 最简单就是安装这个包
-date: 2022-07-08 20:46:25
-updated: 2024-01-09 15:45:00
-categories: 
-  - 运维
-  - 配置
-tags:
-  - 虚拟机
----
-
-## Virtualbox
+## Virtualbox虚拟机
 
 先安装,他会给你两个选项
 

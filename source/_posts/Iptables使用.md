@@ -1,17 +1,6 @@
----
-title: Iptables使用
-excerpt: 根据 ArchWiki 配置一个基础的防火墙
-date: 2022-05-22 20:46:25
-updated: 2024-01-09 16:02:00
-categories: 
-  - 运维
-  - 安全
-tags:
-  - Linux
-  - 安全
----
+# Iptables使用
 
-## Iptables
+## ArchWiki
 
 根据 ArchWiki 配置一个基础的防火墙: [Simple_stateful_firewall](https://wiki.archlinux.org/title/Simple_stateful_firewall#Prerequisites)
 

@@ -1,21 +1,16 @@
----
-title: 探索Docker
-excerpt: 启动镜像等于创建容器. 若容器需要接管本地流量, 则可开启映射端口
-date: 2022-05-14 20:46:25
-updated: 2024-01-09 15:19:00
-categories: 
-  - 运维
-  - 配置
-tags:
-  - Docker
-  - 部署
----
-
-## Docker
+# Docke使用
 
 开发中常见 Docker 文件：
 - Dockerfile: 用来创建自定义镜像
 - docker-compose.yml: 可整合多个镜像, 常用于在启动容器时配置运行参数,便于命令行操作
+
+ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
+```shell
+# /etc/docker/daemon.json
+{
+  "data-root": "/mnt/docker"
+}
+```
 
 ### Docker pull 代理
 docker pull 的代理不走环境变量http_proxy, 也不走/etc/docker/daemon.json 里的proxy. 它有一个属于自己的设置。

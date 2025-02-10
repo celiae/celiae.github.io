@@ -1,14 +1,4 @@
----
-title: Ubuntu-OpenVPN Server
-excerpt: 
-date: 2024-01-16 11:28:00
-updated: 2024-01-16 11:28:00
-categories:
-  - 运维
-  - 配置
-tags:
-  - VPN
----
+# ArchLinux部署OpenVPN
 
 ## 提前准备
 

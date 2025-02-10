@@ -1,15 +1,4 @@
----
-title: Bash加速
-excerpt: 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。
-date: 2024-08-08 20:08:25
-updated: 2024-08-08 20:08:25
-categories: 
-  - 运维
-  - 配置
-tags:
-  - bash
----
-
+# Bash配置
 ## Bash history
 
 常用命令

@@ -1,14 +1,4 @@
----
-title: Linux状态监控
-excerpt: nload 网络网速
-date: 2024-08-11 15:09:00
-updated: 2024-08-11 15:09:00
-categories:
-  - 运维
-  - 监控
-tags:
-  - Linux
----
+# Linux状态监控
 
 Linux 没有像 Windows 的资源管理器，但一些工具一样可以发挥作用，且能看到更详细的信息
 

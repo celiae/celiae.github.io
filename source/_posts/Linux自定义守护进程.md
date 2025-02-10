@@ -1,24 +1,11 @@
----
-title: 自定义守护进程
-excerpt: 在 /etc/systemd/system/clash.service 中创建如下配置文件
-date: 2022-06-01 20:46:25
-updated: 2024-08-08 15:08:00
-categories:
-  - 运维
-  - 网络
-tags:
-  - Clash
-  - 安全
-  - Internet
----
-
+# 自定义守护进程
 ## 安装 clash
 
 ```bash
 sudo pacman -S clash
 ```
 
-### 获取机场提供的配置文件
+### 获取**提供的配置文件
 
 ```bash
 sudo mkdir /etc/clash # 创建配置文件存放地
@@ -44,8 +31,6 @@ ExecStart=/usr/local/bin/clash -d /etc/clash -f /etc/clash/config.yaml
 WantedBy=multi-user.target
 ```
 
-启动
-
 ```bash
-sudo systemctl enable --now clash.service
+sudo systemctl enable --now clash.service # 启动
 ```

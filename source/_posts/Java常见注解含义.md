@@ -1,16 +1,4 @@
----
-title: Java常见注解含义
-excerpt: Intercepts 用于定义 MyBatis 拦截器类可以拦截哪些方法。它包含一个 @Signature 注解数组，每个 @Signature 注解定义一个要拦截的方法签名
-date: 2024-08-09 17:25:00
-updated: 2024-08-10 17:25:00
-categories:
-  - 开发
-  - 后端
-tags:
-  - Java
----
-
-大量信息是通过询问 ChatGPT 获取的
+# Java常见注解含义
 
 ## Java注解
 
