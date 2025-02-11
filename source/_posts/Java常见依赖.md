@@ -1,5 +1,7 @@
-# Java常见依赖
-
+---
+title: Java常见依赖
+excerpt: 是 Hutool 工具集的核心模块，包含了大量基础的工具类
+---
 ## 工具依赖
 
 ### hutool-core 

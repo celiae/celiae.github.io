@@ -1,3 +1,7 @@
+---
+title: Npm使用
+excerpt: 默认的npm资源站 `https://registry.npmjs.org/` 服务器距离远且被隔离，当下载有问题可以替换以下地址
+---
 # Npm使用
 
 ## 国内镜像源

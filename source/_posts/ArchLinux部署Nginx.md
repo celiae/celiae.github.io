@@ -1,53 +1,21 @@
-# Nginx部署
+---
+title: ArchLinux部署Nginx
+excerpt: 包管理器下载安装 `nginx`，启动 nginx
+---
+# ArchLinux部署Nginx
 
 ## 安装 nginx
 
-安装方式：
-
-1. 服务器原生安装 nginx
-2. Docker
-
-发行版本：
-1. ArchLinux
-2. Ubuntu
-
 ### 服务器原生安装 nginx
 
-包管理器下载安装 `nginx`
-
-ArchLinux
+包管理器下载安装 `nginx`，启动 nginx
 
 ```bash
 sudo pacman -S nginx  # ArchLinux
-```
-
-Ubuntu
-
-```bash
-sudo apt update
-sudo apt install nginx
-```
-
-启动 nginx, 3种方式
-
-```bash
-sudo systemctl start nginx  # 开启nginx
-sudo systemctl enable nginx  # 自启动
 sudo systemctl enable --now nginx  # 自启动，并且开启nginx
 ```
 
-编辑 nginx 配置文件
-
-```bash
-sudo vim /etc/nginx/nginx.conf
-```
-
-测试 nginx 配置文件语法
-
-```bash
-sudo nginx -t
-```
-
+编辑 nginx 配置文件`sudo vim /etc/nginx/nginx.conf`
 ```bash
 # /etc/nginx/nginx.conf
 user www-data;  # 负责运行nginx 的用户
@@ -135,6 +103,12 @@ http {
 #		proxy      on;
 #	}
 #}
+```
+
+保存并应用配置
+```bash
+sudo nginx -t # 测试 nginx 配置文件语法
+sudo systemctl restart nginx # 测试 nginx 配置文件语法
 ```
 
 ### Docker

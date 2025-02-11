@@ -1,5 +1,7 @@
-# Java常见注解含义
-
+---
+title: Java常见注解含义
+excerpt: 用于指定自定义注解可以应用的程序元素类型. @Target({ElementType.FIELD})表示这个注解只能被应用到类的字段（即类的成员变量）上
+---
 ## Java注解
 
 ### @Target

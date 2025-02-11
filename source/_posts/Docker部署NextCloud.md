@@ -1,3 +1,7 @@
+---
+title: Docker部署NextCloud
+excerpt: 要想在Docker里的NextCloud添加外部存储，必须在Docker Compose里添加volume。
+---
 # Docker部署NextCloud
 
 要想在Docker里的NextCloud添加外部存储，必须在Docker Compose里添加volume。
@@ -55,6 +59,7 @@ docker-compose up -d # 启用
     1 => '192.168.1.200:7080',
   ),
 ```
+再次启动，应用配置。
 ```shell
 docker-compose stop # 关闭
 docker-compose up -d # 启用

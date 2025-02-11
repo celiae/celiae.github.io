@@ -5,7 +5,7 @@
 # Site
 title: Ceblog
 subtitle: 'Celiae 个人博客'
-description: '躺了'
+description: 'Celiae 个人博客'
 keywords: ceblog
 author: celiae
 language: zh-CN
@@ -101,7 +101,7 @@ meta_generator: true
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid  # 指定主题
+theme: next  # 指定主题
 
 # widgets:
 #   - type: profile

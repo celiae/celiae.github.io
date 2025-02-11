@@ -1,5 +1,7 @@
-# Iptables使用
-
+---
+title: Linux使用Iptables
+excerpt: 根据 ArchWiki 配置一个基础的防火墙
+---
 ## ArchWiki
 
 根据 ArchWiki 配置一个基础的防火墙: [Simple_stateful_firewall](https://wiki.archlinux.org/title/Simple_stateful_firewall#Prerequisites)
@@ -26,22 +28,10 @@ iptables -S # 忘记命令,看看之前怎么写的
 -A UDP -p udp -m udp --dport 53 -j ACCEPT
 ```
 
-想再开一个端口,依葫芦画瓢.
+
 
 ```bash
-iptables -A TCP -p tcp -m tcp --dport 2222 -j ACCEPT
-```
-
-### 关闭端口
-
-查看相应链相应行数
-
-```bash
-iptables -nvL --line-numbers
-```
-
-以行删除规则
-
-```bash
-iptables -D TCP 6
+iptables -A TCP -p tcp -m tcp --dport 2222 -j ACCEPT  # 想再开一个端口,依葫芦画瓢.
+iptables -nvL --line-numbers  # 查看相应链相应行数
+iptables -D TCP 6 # 以行删除规则
 ```

@@ -1,5 +1,13 @@
-# Bash配置
-## Bash history
+---
+title: Shell配置
+excerpt: 用Bash来执行程序，用Fish来交互
+---
+# Shell配置
+
+用Bash来执行程序，用Fish来交互
+
+## Bash配置
+### Bash history
 
 常用命令
 ```bash
@@ -69,7 +77,7 @@ shopt -s histverify #替换前确认
 > 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。shopt 是 "shell options" 的缩>写，通过它你可以查看和设置不同的 shell 选项。
 
 
-### SSH
+## SSH
 
 ```bash
 ssh-keygen  #生成公私钥对文件

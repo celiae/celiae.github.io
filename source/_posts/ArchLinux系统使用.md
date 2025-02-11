@@ -1,7 +1,10 @@
-# ArchLinux系统使用
+---
+title: ArchLinux系统使用
+excerpt: 系统全局配置
+---
 ## 系统全局配置
 典型的配置文件有
-- `/etc/profile.d/`,建议全局配置在此创建，好
+- `/etc/profile.d/`,建议全局配置在此创建
 - `~/.bashrc`
 这几样不直接在已有的配置文件基础上修改，能保留系统安装时的模样。，默认文本编辑器，JAVA_HOME路径
 
@@ -40,9 +43,9 @@ export JAVA_HOME=/usr/lib/jvm/default
 ### vmoptions
 vmoptions在运行java程序时，可用于调整java虚拟机的选项，注意`.vmoptions`文件最好是可执行的
 
-## Yay - AUR helper (AUR 包管理器)
+## Yay - AUR helper
 
-安装未被收录在核心软件包的软件，通常下载 github 的 release 软件。使用魔法上网后可以安装且使用 `yay`，和 `pacman`
+AUR 包管理器，安装未被收录在核心软件包的软件，通常下载 github 的 release 软件。使用魔法上网后可以安装且使用 `yay`，和 `pacman`
 使用方式基本一样，即可管理官方软件包，也可管理AUR包,可以用`yay`代替`pacman`。
 
 ```shell
@@ -74,7 +77,7 @@ sudo pacman -S samba
 ```
 配置文件默认存放在`/etc/samba/smb.conf`，在配置文件中找到类似这样的结构：
 ```shell
-[shared_folder]
+[Public]
   comment = Shared Folder
   path = /path/to/shared_folder
   browsable = yes
@@ -82,9 +85,9 @@ sudo pacman -S samba
   guest ok = yes
   create mask = 0755
 ```
-这就是要配置的共享文件夹，远程挂载时，访问的路径就是//192.168.1.100/shared_folder，IP以实际为标准，`//`不能忽略。
-修改默认按需求配。
-- `shared_folder`是跟着IP后的网络文件夹名
+这就是要配置的共享文件夹，远程挂载时，访问的路径就是//192.168.1.100/Public，IP以实际为标准，`//`不能忽略。
+修改默认，按需求配。
+- `Public`是跟着IP后的网络文件夹名
 - `/path/to/shared_folder`设为要共享的路径
 - 权限按需求配
 

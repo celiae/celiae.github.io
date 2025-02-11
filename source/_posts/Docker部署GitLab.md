@@ -1,8 +1,12 @@
+---
+title: Docker部署GitLab
+excerpt: 用Docker在ArchLinux上部署GitLab，ArchWiki有在实体机上部署的文档，Docker配置节省时间。
+---
 # Docker部署GitLab
 
 ## 部署
 
-用Docker在ArchLinux上部署GitLab，ArchWiki有在实体机上部署的文档，Docker配置省事。
+用Docker在ArchLinux上部署GitLab，ArchWiki有在实体机上部署的文档，Docker配置节省时间。
 
 ### Docker Compose
 

@@ -1,4 +1,8 @@
-# Linux打开 BitLocker 加密盘
+---
+title: Linux打开BitLocker加密盘
+excerpt: 在Linux中，访问Windows下通过BitLocker加密的硬盘分区
+---
+## Linux打开BitLocker加密盘
 
 在Linux中，访问Windows下通过BitLocker加密的硬盘分区
 

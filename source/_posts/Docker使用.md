@@ -1,26 +1,29 @@
-# Docke使用
+---
+title: Docker使用
+excerpt: ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
+---
+# Docker使用
 
 开发中常见 Docker 文件：
-- Dockerfile: 用来创建自定义镜像
-- docker-compose.yml: 可整合多个镜像, 常用于在启动容器时配置运行参数,便于命令行操作
+- Dockerfile，用来创建自定义镜像
+- docker-compose.yml，可整合多个镜像, 常用于在启动容器时配置运行参数,便于命令行操作
 
 ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
-```shell
-# /etc/docker/daemon.json
+编辑配置文件`sudo vim /etc/docker/daemon.json`
+```json
 {
-  "data-root": "/mnt/docker"
+  "data-root":"/mnt/docker"
 }
 ```
 
-### Docker pull 代理
-docker pull 的代理不走环境变量http_proxy, 也不走/etc/docker/daemon.json 里的proxy. 它有一个属于自己的设置。
-方法如下：
+## Docker pull 代理
+`docker pull`的代理不走环境变量http_proxy，也不走`/etc/docker/daemon.json`里的proxy. 它有一个属于自己的设置。方法如下：
 ```bash
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
 ```
 
-`http-proxy.conf`内容如下：
+内容`http-proxy.conf`内容如下：
 ```bash
 [Service]
 Environment="HTTP_PROXY=http://<proxy_address>:<proxy_port>"
@@ -57,8 +60,6 @@ docker run -d \
 
 命令启动不好做修改. 利用 docker-compose 每次运行容器只需这个配置文件. code-server 的配置文件 docker-compose.yml:
 ```yml
----
-version: "2.1"  # 建议去掉
 services:
   code-server:
     image: lscr.io/linuxserver/code-server:latest
@@ -67,9 +68,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      - PASSWORD=password #optional
-      - SUDO_PASSWORD=password #optional
-      - DEFAULT_WORKSPACE=/config/workspace #optional
+      - PASSWORD=password
+      - SUDO_PASSWORD=password
+      - DEFAULT_WORKSPACE=/config/workspace
     volumes:
       - /path/to/appdata/config:/config
     ports:
@@ -126,4 +127,4 @@ docker run -d -p 1024:3000 celiae/ceblog:latest # 服务器上运行镜像
 WARN[0000] /home/celiae/Templates/mall4cloud-3.3/doc/中间件docker-compse一键安装/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
 ```
 
-*部分代码来自[linuxserver/code-server](https://hub.docker.com/r/linuxserver/code-server)*
+部分代码来自[linuxserver/code-server](https://hub.docker.com/r/linuxserver/code-server)
