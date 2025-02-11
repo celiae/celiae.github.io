@@ -2,19 +2,30 @@
 title: Docker使用
 excerpt: ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
 ---
-# Docker使用
+## Docker
 
-开发中常见 Docker 文件：
-- Dockerfile，用来创建自定义镜像
-- docker-compose.yml，可整合多个镜像, 常用于在启动容器时配置运行参数,便于命令行操作
+Docker能制造虚拟环境，启用多个服务，可以选择映射端口，比虚拟机轻便。用root权限太高了（sudo），比较习惯加入docker用户组，退出系统登陆生效。
+```shell
+sudo gpasswd -a celiae docker
+```
+Dockerfile是用来创建自定义镜像;docker-compose.yml可整合多个镜像, 常用于在启动容器时配置运行参数,便于命令行操作。多镜像容器尽量使用docker-compose配置文件来管理，我的用户加入了docker组，所以在用户目录下`~/srv/docker`存放docker-compose配置文件。
+例如`~/srv/docker/nextcloud/docker-compose.yml`，`~/srv/docker/gitlab/docker-compose.yml`。
 
-ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
+因为要下载镜像，所以需要大量磁盘空间，正常根分区100~200G肯定不够，一些AI模型轻易到达几十G，扩容是常有的事，ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间，也可以更改。
 编辑配置文件`sudo vim /etc/docker/daemon.json`
 ```json
 {
   "data-root":"/mnt/docker"
 }
 ```
+
+## 迁移数据
+坑在复制命令这步，用常规的`cp -r`不能完全复制，文件元数据和权限等会有问题，一些服务启动不了。所以用`rsync`，将原先的数据完全复制，注意路径。
+```shell
+rsync -avzHP /var/lib/docker /mnt/storage/  # /var/lib/docker复制到/mnt/storage/下
+```
+ArchLinux里默认是`/var/lib/docker`，`/var/lib/docker`是当前所在位置，通过`docker info | grep 'Docker Root Dir'`命令查看，`docker info`是查看docker配置信息的。建议放在固态硬盘里，docker系统还是吃读写的。
+迁移好后重新配置`/etc/docker/daemon.json`的data-root，重启docker服务。
 
 ## Docker pull 代理
 `docker pull`的代理不走环境变量http_proxy，也不走`/etc/docker/daemon.json`里的proxy. 它有一个属于自己的设置。方法如下：

@@ -2,6 +2,10 @@
 title: ArchLinux系统使用
 excerpt: 系统全局配置
 ---
+## 注意
+1. 要用到`rm -rf`命令时先移动`mv`到待删文件夹，若干天后再使用`rm -rf`
+2. 修改`/etc/default/grub`后使用`grub-mkconfig -o /boot/grub/grub.cfg`保存设置
+
 ## 系统全局配置
 典型的配置文件有
 - `/etc/profile.d/`,建议全局配置在此创建
@@ -18,6 +22,29 @@ export all_proxy=socks5://127.0.0.1:7890
 要配置foo用户的默认编辑器，编辑`vim ~/.bashrc`
 ```shell
 export EDITOR=nano
+```
+
+## Yay - AUR helper
+AUR 包管理器，安装未被收录在核心软件包的软件，通常下载 github 的 release 软件。使用魔法上网后可以安装且使用 `yay`，和 `pacman`
+使用方式基本一样，即可管理官方软件包，也可管理AUR包,可以用`yay`代替`pacman`。
+```shell
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
+如遇到：
+```bash
+error: ... signature from "Jiachen YANG (Arch Linux Packager Signing Key) <farseerfc@archlinux.org>" is marginal trust
+:: File ... is corrupted (invalid or corrupted package (PGP signature)).
+Do you want to delete it? [Y/n]
+error: failed to commit transaction (invalid or corrupted package)
+Errors occurred, no packages were upgraded.
+-> error installing repo packages
+```
+在很久没更新或者重装系统时经常会遇到,我们应该重新安装`archlinux-keyring`
+```bash
+sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
 ```
 
 ## Java 环境
@@ -42,32 +69,6 @@ export JAVA_HOME=/usr/lib/jvm/default
 
 ### vmoptions
 vmoptions在运行java程序时，可用于调整java虚拟机的选项，注意`.vmoptions`文件最好是可执行的
-
-## Yay - AUR helper
-
-AUR 包管理器，安装未被收录在核心软件包的软件，通常下载 github 的 release 软件。使用魔法上网后可以安装且使用 `yay`，和 `pacman`
-使用方式基本一样，即可管理官方软件包，也可管理AUR包,可以用`yay`代替`pacman`。
-
-```shell
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
-如遇到：
-```bash
-error: ... signature from "Jiachen YANG (Arch Linux Packager Signing Key) <farseerfc@archlinux.org>" is marginal trust
-:: File ... is corrupted (invalid or corrupted package (PGP signature)).
-Do you want to delete it? [Y/n]
-error: failed to commit transaction (invalid or corrupted package)
-Errors occurred, no packages were upgraded.
--> error installing repo packages
-```
-在很久没更新或者重装系统时经常会遇到,我们应该重新安装`archlinux-keyring`
-```bash
-sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
-```
 
 ## Samba搭建
 Samba是一个网络磁盘挂载软件，让你的磁盘文件共享在互联网。
@@ -112,3 +113,14 @@ sudo systemctl restart smb.service
 sudo mount -t cifs //192.168.1.200/sdb1_shared /mnt
 ```
 在Windows中，文件管理器中路径栏输入`//192.168.1.200/sdb1_shared`
+
+## Ollama
+Ollama是Meta开源的AI语言模型，ArchLinux已将它收录包管理器中，pacman可以直接安装，在[ArchLinux桌面安装Xfce](ArchLinux桌面安装Xfce)中，涉及nvidia的驱动安装，一般AI软件带`cuda`版本号的才是用显卡计算的。本人搭载`技嘉3060ti g6x`，能够启用ollama。
+
+### 安装
+有`ollama`和`ollama-cuda`这两种软件包，`ollama`是软件核心也是CPU版本，`ollama-cuda`能启用Nvidia GPU。
+```shell
+sudo pacman -S ollama ollama-cuda
+ollama run llama3.2:latest  # 终端启用ollama
+```
+在终端与AI对话，个人搭建的AI还是比不上在线AI，处理简单问题比如写作文，算数，哲学问题和场景问题找更合适。好在比较稳定，网络环境差可用。
