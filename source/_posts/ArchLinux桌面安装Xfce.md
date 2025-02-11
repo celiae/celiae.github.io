@@ -7,7 +7,7 @@ excerpt: 图形桌面需要安装两样，桌面软件/Display Manager. Display 
 图形桌面需要安装两样，桌面和Display Manager. Display Manager用于启动桌面.
 
 ```shell
-sudo pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter adobe-source-han-serif-cn-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
+sudo pacman -S xfce4 xfce4-goodies pavucontrol lightdm lightdm-gtk-greeter adobe-source-han-serif-cn-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 
 sudo systemctl enable lightdm.service
 ```
 
@@ -15,7 +15,7 @@ sudo systemctl enable lightdm.service
 - `xfce4`图形桌面
 - `xfce4-goodies`桌面应用
 - `libcanberra`PulseAudio的一个库，启动声音用
-- `xfce4-pulseaudio-plugin`启动键盘控制音量
+- `xfce4-pulseaudio-plugin`，`pavucontrol`启动键盘控制音量
 - `gvfs`完善文件管理器组件
 - `noto-fonts`特殊字体
 

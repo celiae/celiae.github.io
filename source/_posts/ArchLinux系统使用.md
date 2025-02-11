@@ -123,4 +123,10 @@ Ollama是Meta开源的AI语言模型，ArchLinux已将它收录包管理器中�
 sudo pacman -S ollama ollama-cuda
 ollama run llama3.2:latest  # 终端启用ollama
 ```
+安装ollama也会创建ollama用户，ollama数据存放在`/var/lib/ollama`，所有者是ollama.
+llama模型也可以设置安装路径，`sudo systemctl edit ollama`修改Environment="OLLAMA_MODELS=的值（注意阅读注释），移到保存区域，取消注释保存。
+```shell
+sudo chown -R ollama:ollama /path/to/ollama
+sudo systemctl restart ollama.service
+```
 在终端与AI对话，个人搭建的AI还是比不上在线AI，处理简单问题比如写作文，算数，哲学问题和场景问题找更合适。好在比较稳定，网络环境差可用。
