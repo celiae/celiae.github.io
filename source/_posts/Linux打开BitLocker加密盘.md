@@ -1,8 +1,7 @@
 ---
 title: Linux打开BitLocker加密盘
-excerpt: 在Linux中，访问Windows下通过BitLocker加密的硬盘分区
+excerpt: 在Linux中，访问Windows下通过BitLocker加密的硬盘分区。找到BitLocker分区的设备路径，例如`/dev/sdb1`. 使用Dislocker命令来解锁BitLocker分区，并且获取解密后的分区映像。ArchLinux 在更新系统后可能会出现找不到特定版本的 `libruby.so` 包的问题，可以这样解决
 ---
-## Linux打开BitLocker加密盘
 
 在Linux中，访问Windows下通过BitLocker加密的硬盘分区
 

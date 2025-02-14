@@ -1,8 +1,8 @@
 ---
 title: Linux状态监控
-excerpt: Linux 没有像 Windows 的资源管理器，但一些工具一样可以发挥作用，且能看到更详细的信息
+excerpt: Linux能看到更详细的信息。
 ---
-Linux 没有像 Windows 的资源管理器，但一些工具一样可以发挥作用，且能看到更详细的信息
+Linux能看到更详细的信息。
 
 * btop: 全面的系统信息
 * top: CPU占用/内存占用/进程信息
