@@ -4,7 +4,7 @@ excerpt: 图形桌面需要安装两样，桌面软件/Display Manager. Display 
 ---
 ## Xfce桌面
 
-图形桌面需要安装两样，桌面和Display Manager. Display Manager用于启动桌面.
+图形桌面需要安装两样，桌面和Display Manager。Display Manager用于启动桌面。
 
 ```shell
 sudo pacman -S xfce4 xfce4-goodies pavucontrol lightdm lightdm-gtk-greeter adobe-source-han-serif-cn-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra 

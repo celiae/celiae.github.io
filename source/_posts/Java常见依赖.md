@@ -1,6 +1,6 @@
 ---
 title: Java常见依赖
-excerpt: 是 Hutool 工具集的核心模块，包含了大量基础的工具类
+excerpt: 是 Hutool 工具集的核心模块，包含了大量基础的工具类。feign-httpclient 是一个 Feign 的扩展，提供了基于 Apache HttpClient 的 Feign 客户端实现。Feign 默认使用 JDK 的 HttpURLConnection 来处理 HTTP 请求，但通过使用 feign-httpclient，你可以将 Feign 的 HTTP 请求处理交给 Apache HttpClient，这样可以利用 Apache HttpClient 的更多特性和配置选项。
 ---
 ## 工具依赖
 

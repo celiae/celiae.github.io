@@ -1,9 +1,8 @@
 ---
 title: Linux自定义守护进程
-excerpt: 守护进程简单讲是系统自启动后台程序
+excerpt: 守护进程是系统自启动后台程序。以安装clash为例，让clash保持后台运行。通常后加的守护进程存放在`/etc/systemd/system`下。
 ---
-## 守护进程
-守护进程简单讲是系统自启动后台程序。以安装clash为例，让clash保持后台运行。通常后加的守护进程存放在`/etc/systemd/system`下。
+守护进程是系统自启动后台程序。以安装clash为例，让clash保持后台运行。通常后加的守护进程存放在`/etc/systemd/system`下。
 
 ## 安装 clash
 

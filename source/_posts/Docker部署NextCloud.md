@@ -1,11 +1,12 @@
 ---
 title: Docker部署NextCloud
-excerpt: 要想在Docker里的NextCloud添加外部存储，必须在Docker Compose里添加volume。
+excerpt: Nextcloud是一款网盘软件，有极大的生态，ios/Android也有客户端软件，还能自动同步手机数据，支持同步ios实况图片，能配置redis，添加的外部存储包括Amazon S3/Minio等等，它让我刷新了对php的认识。
 ---
-# Docker部署NextCloud
+Nextcloud是一款网盘软件，有极大的生态，ios/Android也有客户端软件，还能自动同步手机数据，支持同步ios实况图片，能配置redis，添加的外部存储包括Amazon S3/Minio等等，它让我刷新了对php的认识。
 
 要想在Docker里的NextCloud添加外部存储，必须在Docker Compose里添加volume。
 ```shell
+# ~/srv/docker/nextcloud/docker-compose.yml
 volumes:
   nextcloud:
   db:

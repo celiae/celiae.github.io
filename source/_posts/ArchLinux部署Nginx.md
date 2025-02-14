@@ -1,12 +1,9 @@
 ---
 title: ArchLinux部署Nginx
-excerpt: 包管理器下载安装 `nginx`，启动 nginx
+excerpt: Nginx是非常常用的Web服务软件，前端生产环境，系统负载均衡，反向代理这些互联网专业名词都离不开Nginx背景。
 ---
-# ArchLinux部署Nginx
-
-## 安装 nginx
-
-### 服务器原生安装 nginx
+Nginx是非常常用的Web服务软件，前端生产环境，系统负载均衡，反向代理这些互联网专业名词都离不开Nginx背景。
+## 安装Nginx
 
 包管理器下载安装 `nginx`，启动 nginx
 
@@ -32,77 +29,24 @@ events {
 http {
   # http 配置模块
 
-	##
-	# Basic Settings
-	##
-
 	sendfile on;
 	tcp_nopush on;
 	types_hash_max_size 2048;
-	# server_tokens off;
-
-	# server_names_hash_bucket_size 64;
-	# server_name_in_redirect off;
-
+	
 	include /etc/nginx/mime.types;  # mime.types包含支持的文件类型，例如：jpg,png
 	default_type application/octet-stream;
-
-	##
-	# SSL Settings
-	##
 
 	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
 	ssl_prefer_server_ciphers on;
 
-	##
-	# Logging Settings
-	##
-
 	access_log /var/log/nginx/access.log;
 	error_log /var/log/nginx/error.log;
 
-	##
-	# Gzip Settings
-	##
-
 	gzip on;  # 启用 gzip 压缩
-
-	# gzip_vary on;
-	# gzip_proxied any;
-	# gzip_comp_level 6;
-	# gzip_buffers 16 8k;
-	# gzip_http_version 1.1;
-	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-
-	##
-	# Virtual Host Configs
-	##
 
 	include /etc/nginx/conf.d/*.conf; # 包含此路径下的配置文件
 	include /etc/nginx/sites-enabled/*; # 启用的站点，一般在此路径配置 nginx 站点
 }
-
-
-#mail {
-#	# See sample authentication script at:
-#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
-#
-#	# auth_http localhost/auth.php;
-#	# pop3_capabilities "TOP" "USER";
-#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
-#
-#	server {
-#		listen     localhost:110;
-#		protocol   pop3;
-#		proxy      on;
-#	}
-#
-#	server {
-#		listen     localhost:143;
-#		protocol   imap;
-#		proxy      on;
-#	}
-#}
 ```
 
 保存并应用配置
@@ -111,7 +55,7 @@ sudo nginx -t # 测试 nginx 配置文件语法
 sudo systemctl restart nginx # 测试 nginx 配置文件语法
 ```
 
-### Docker
+## Docker部署
 
 拉取 nginx 镜像
 ```bash

@@ -1,12 +1,11 @@
 ---
 title: Docker部署GitLab
-excerpt: 用Docker在ArchLinux上部署GitLab，ArchWiki有在实体机上部署的文档，Docker配置节省时间。
+excerpt: GitLab是一个代码托管服务软件，它也有公共的平台类似Github，因为能够自行部署社区版本的GitLab，所以常用于企业和私人的托管环境，闭源软件的版本控制。ArchWiki有在实体机上部署的文档，实测不太好用，用Docker在ArchLinux上部署GitLab节省时间。
 ---
-# Docker部署GitLab
-
+GitLab是一个代码托管服务软件，它也有公共的平台类似Github，因为能够自行部署社区版本的GitLab，所以常用于企业和私人的托管环境，闭源软件的版本控制。
 ## 部署
 
-用Docker在ArchLinux上部署GitLab，ArchWiki有在实体机上部署的文档，Docker配置节省时间。
+ArchWiki有在实体机上部署的文档，实测不太好用，用Docker在ArchLinux上部署GitLab节省时间。
 
 ### Docker Compose
 
@@ -33,9 +32,9 @@ services:
     shm_size: '256m'
 ```
 
-端口配置只要保证不与本机暴露端口冲突即可，比如默认的22端口一般作ssh，所以要改。
-2224端口就是用于git命令远程推送端口，2048是浏览器访问端口，2049是https，因为是局域网，所以配置了GitLab服务器IP`192.168.1.200`。
-注意这三个路径，我配置到了外部存储，防止根目录占用。
+端口配置只要保证不与本机暴露端口冲突即可，默认的22端口一般作ssh服务，所以要改。
+2224端口就是用于git命令远程推送端口，2048是浏览器访问端口，2049是https（一般不用），因为是局域网，所以配置了GitLab服务器IP`192.168.1.200`。
+注意这三个路径，我配置到了外部存储，防止根目录占用过多。
 - '/mnt/sdb1/gitlab/config:/etc/gitlab'
 - '/mnt/sdb1/gitlab/logs:/var/log/gitlab'
 - '/mnt/sdb1/gitlab/data:/var/opt/gitlab'
