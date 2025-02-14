@@ -2,24 +2,21 @@
 title: ArchLinux系统使用
 excerpt: 系统全局配置
 ---
-## 注意
-1. 要用到`rm -rf`命令时先移动`mv`到待删文件夹，若干天后再使用`rm -rf`
-2. 修改`/etc/default/grub`后使用`grub-mkconfig -o /boot/grub/grub.cfg`保存设置
-
 ## 系统全局配置
 典型的配置文件有
-- `/etc/profile.d/`,建议全局配置在此创建
-- `~/.bashrc`
-这几样不直接在已有的配置文件基础上修改，能保留系统安装时的模样。，默认文本编辑器，JAVA_HOME路径
+- `/etc/profile.d/`,建议全局配置脚本在此创建
+- `~/.bashrc`，用户本身配置
+
+这几样不直接在已有的配置文件基础上修改，能保留系统安装时的模样。系统先执行`/etc`的全局脚本，最后执行`~/`用户脚本，所以用户脚本是可以覆盖系统脚本的。
 
 ### 配置步骤
-如果我要配置代理，编辑`sudo vim /etc/profile.d/proxy.sh`
+如果我要配置代理，应用给所有用户，编辑`sudo vim /etc/profile.d/proxy.sh`
 ```shell
 export https_proxy=http://127.0.0.1:7890
 export http_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7890
 ```
-要配置foo用户的默认编辑器，编辑`vim ~/.bashrc`
+要配置默认编辑器，保证EDITOR环境变量有设置
 ```shell
 export EDITOR=nano
 ```
@@ -45,6 +42,12 @@ Errors occurred, no packages were upgraded.
 在很久没更新或者重装系统时经常会遇到,我们应该重新安装`archlinux-keyring`
 ```bash
 sudo pacman -S archlinux-keyring  #更新了`keyring`之后再次更新系统
+```
+
+## Python PIP
+俗称PyPi，安装`sudo pacman -S python-pip`，默认依赖源跑不满宽带，配置国内依赖源
+```shell
+pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 ```
 
 ## Java 环境
@@ -115,7 +118,7 @@ sudo mount -t cifs //192.168.1.200/sdb1_shared /mnt
 在Windows中，文件管理器中路径栏输入`//192.168.1.200/sdb1_shared`
 
 ## Ollama
-Ollama是Meta开源的AI语言模型，ArchLinux已将它收录包管理器中，pacman可以直接安装，在[ArchLinux桌面安装Xfce](ArchLinux桌面安装Xfce)中，涉及nvidia的驱动安装，一般AI软件带`cuda`版本号的才是用显卡计算的。本人搭载`技嘉3060ti g6x`，能够启用ollama。
+Ollama是Meta开源的AI语言模型，ArchLinux已将它收录包管理器中，pacman可以直接安装，在[ArchLinux桌面安装Xfce](ArchLinux桌面安装Xfce)中，涉及nvidia的驱动安装，一般AI软件带`cuda`版本号的才是用显卡计算的。本人搭载`技嘉3060ti g6x`，能够启用ollama，默认的端口在11434。
 
 ### 安装
 有`ollama`和`ollama-cuda`这两种软件包，`ollama`是软件核心也是CPU版本，`ollama-cuda`能启用Nvidia GPU。
@@ -130,3 +133,46 @@ sudo chown -R ollama:ollama /path/to/ollama
 sudo systemctl restart ollama.service
 ```
 在终端与AI对话，个人搭建的AI还是比不上在线AI，处理简单问题比如写作文，算数，哲学问题和场景问题找更合适。好在比较稳定，网络环境差可用。
+
+## Minio
+Minio是对象存储中间件，可在开发中管理系统中文件上传下载，获取文件的访问地址等等。在ArchLinux本机部署也比较简单，默认的端口在9199。
+```shell
+sudo pacman -S minio  # 安装minio包
+```
+配置minio`sudo vim /etc/minio/minio.conf`。
+- MINIO_VOLUMES，文件存放地址，在Arch里默认是`/srv/minio`与minio交互的文件或通过调用minio API处理的文件一律存放在此，一般选择空间大的挂载点；
+- MINIO_ROOT_USER，管理员用户名，在登录管理界面时要用到，开发时也可以作access-key；
+- MINIO_ROOT_PASSWORD，管理员密码，开发时也可以作secret-key；
+- MINIO_OPTS，服务启动参数，`--address`是实际服务开启端口，也是API调用端口，`--console-address`是管理界面登录端口，如果不指定则会在每次启动服务时随机设置，在浏览器直接访问API调用端口时也会重定向到随机端口。
+```shell
+# /etc/minio/minio.conf
+MINIO_VOLUMES="/mnt/sdb1/minio"
+MINIO_ROOT_USER=root
+MINIO_ROOT_PASSWORD=RqfedCcLbQ8
+MINIO_OPTS="--address :5020 --console-address :5021"
+```
+以上所有配置都可以自定义，注意`MINIO_VOLUMES`的路径要是minio:minio的所有权和所有组，不这样配置可能会报错，其次可以看到`/srv/minio`的所有者就是minio。
+```shell
+# journalctl -xeu minio
+Feb 14 00:10:32 kuafu minio[6301]: Error: unable to rename (/mnt/sdb1/celiae/minio/.minio.sys/tmp -> /mnt/sdb1/celiae/minio/.minio.sys/tmp-old/fbc20a83-fe9c-4416-a8d9-305ac337deb6) file access denied, drive may be faulty, please investigate (*fmt.wrapError)
+......
+Feb 14 00:10:32 kuafu minio[6301]: Error: unable to create (/mnt/sdb1/celiae/minio/.minio.sys/tmp) file access denied, drive may be faulty, please investigate (*fmt.wrapError)
+......
+Feb 14 00:10:32 kuafu systemd[1]: minio.service: Main process exited, code=exited, status=1/FAILURE
+```
+启动minio，API调用时使用5020端口，进入管理界面时用5021端口。
+```shell
+sudo systemctl daemon-reload
+sudo systemctl enable --now minio
+```
+
+## Redis
+Redis是常用的内存数据库软件，使用内存来存储经常调用的数据，以达到加速软件系统的数据交互，ArchLinux可直接安装，默认的端口在6379。
+```shell
+sudo pacman -S redis
+```
+
+
+## 注意
+1. 要用到`rm -rf`命令时先移动`mv`到待删文件夹，若干天后再使用`rm -rf`，有的发行版直接alias rm -> mv。
+2. 修改`/etc/default/grub`后使用`grub-mkconfig -o /boot/grub/grub.cfg`保存设置
