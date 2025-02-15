@@ -1,6 +1,6 @@
 ---
 title: Docker部署GitLab
-excerpt: GitLab是一个代码托管服务软件，它也有公共的平台类似Github，因为能够自行部署社区版本的GitLab，所以常用于企业和私人的托管环境，闭源软件的版本控制。ArchWiki有在实体机上部署的文档，实测不太好用，用Docker在ArchLinux上部署GitLab节省时间。
+excerpt: GitLab是一个代码托管服务软件，它也有公共的平台类似Github，因为能够自行部署社区版本的GitLab，所以常用于企业和私人的托管环境，闭源软件的版本控制。
 toc: true
 categories:
   - 虚拟技术

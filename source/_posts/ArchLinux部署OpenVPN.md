@@ -1,6 +1,6 @@
 ---
 title: ArchLinux部署OpenVPN
-excerpt: OpenVPN是一款开源VPN软件，包括服务端软件和客户端软件。在互联网中建立加密通道，客户端用加密通道与服务端通信，也可以在服务端中启用客户端到客户端通信，这样所有加入VPN通道的客户端之间也能通信。
+excerpt: OpenVPN是一款开源VPN软件，包括服务端软件和客户端软件。在互联网中建立加密通道，客户端用加密通道与服务端通信
 toc: true
 categories:
   - 系统
