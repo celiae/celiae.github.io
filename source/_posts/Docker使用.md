@@ -8,9 +8,7 @@ tags:
   - Docker
 ---
 
-## Docker
-
-Docker能制造虚拟环境，启用多个服务，能映射端口，比虚拟机轻便。当开发使用多个中间件时，用docker也能方便制造生产环境，快速启动应用程序。
+Docker能制造虚拟环境，启用多个服务，能映射端口，比虚拟机轻便。当开发使用多个中间件时，用docker也能方便制造生产环境，快速部署应用程序。
 
 ## 安装
 
@@ -26,14 +24,12 @@ sudo pacman -S docker
 sudo gpasswd -a celiae docker # 退出系统登陆生效
 ```
 
-Dockerfile是用来创建自定义镜像；docker-compose.yml可整合多个镜像,
-常用于在启动容器时配置运行参数,便于命令行操作。多镜像容器尽量使用docker-compose配置文件来管理，我的用户加入了docker组，所以在用户目录下`~/srv/docker`
-存放docker-compose配置文件。
+Dockerfile是用来创建自定义镜像；docker-compose.yml可整合多个镜像,管理多个容器，常用于在启动容器时配置运行参数,便于命令行操作。
+多镜像容器尽量使用docker-compose配置文件来管理，我的用户加入了docker组，所以在用户目录下`~/srv/docker`存放docker-compose配置文件。
 例如`~/srv/docker/nextcloud/docker-compose.yml`，`~/srv/docker/gitlab/docker-compose.yml`。
 
-因为要下载镜像，所以需要大量磁盘空间，正常根分区100~
-200G肯定不够，一些AI模型轻易到达几十G，扩容是常有的事，ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间。
-也可以更改，编辑配置文件`sudo vim /etc/docker/daemon.json`
+因为要下载镜像，所以需要大量磁盘空间，正常根分区100 G ~ 200 G肯定不够，一些AI模型轻易到达几十G，不小心就要扩容，ArchLinux默认镜像安装路径在`/var/lib/docker`，注意磁盘空间。
+也可以更改，编辑配置文件`sudo vim /etc/docker/daemon.json`：
 
 ```json
 {
@@ -43,19 +39,17 @@ Dockerfile是用来创建自定义镜像；docker-compose.yml可整合多个镜�
 
 ## 迁移数据
 
-在前期部署时可能没有意识到，镜像磁盘占用问题，但是已经运行了一些很重要的容器，Docker目前还没有多镜像路径的支持，所以只能全部迁移，路径的配置已表述，容易出事就在数据。
+在前期部署时可能没有意识到，镜像磁盘占用问题，但是已经运行了一些很重要的容器，Docker目前还没有多镜像路径的支持，所以只能全部迁移，Docker镜像路径的配置已表述，容易出事的就是数据。
 
 ### 坑
 
-在复制命令这步，用常规的也是ArchWiki中提到的`cp -r`**不能**
-完全复制，文件元数据和权限会有问题，一些容器启动不了。所以用`rsync`，将原先的数据完全复制，注意路径。
+在复制命令这步，用常规的也是ArchWiki中提到的`cp -r`是**不能**完全复制成功的，用`cp -r`复制完成后，文件元数据和权限会有问题，一些容器启动不了。所以用`rsync`，将原先的数据完全复制，注意路径。
 
 ```shell
 rsync -avzHP /var/lib/docker /mnt/storage/  # /var/lib/docker复制到/mnt/storage/下
 ```
 
-ArchLinux里默认是`/var/lib/docker`，`/var/lib/docker`是docker默认所在位置，通过`docker info | grep 'Docker Root Dir'`
-命令查看，`docker info`是查看docker配置信息的。建议放在固态硬盘里，docker系统还是吃读写的。
+ArchLinux里默认是`/var/lib/docker`，`/var/lib/docker`是docker默认所在位置，通过`docker info | grep 'Docker Root Dir'`命令查看，`docker info`是查看docker配置信息的。有条件，还是建议镜像放在固态硬盘里，docker系统还是吃读写的。
 迁移好后重新配置`/etc/docker/daemon.json`的data-root，重启docker服务。
 
 ```shell
@@ -63,14 +57,14 @@ ArchLinux里默认是`/var/lib/docker`，`/var/lib/docker`是docker默认所在�
 sudo systemctl restart docker
 ```
 
-所以最好在安装时就设计好镜像放在哪，[测试新路径](#如何测试新路径)没问题后，也可以删除原来的镜像`/var/lib/docker`。
+[测试新路径](#如何测试新路径)没问题后，也可以删除原来的镜像`/var/lib/docker`。
+所以最好在安装时就设计好镜像放在哪。
 
-#### 如何测试新路径
+#### 如何测试新镜像路径
 
-查看docker日志，用systemctl或者journalctl，检查新路径权限，新路径位置有没有报错，有报错就参考之前的路径，要和`/var/lib/docker`
-里的一模一样。
-配置没问题了，就检查每一个容器是否能正常启动`docker ps`，注意`status`
-中没有up的，容器间往往会有依赖，被依赖的无法启动那么应用就无法正常使用，对于出错的容器，检查容器中的端口映射，文件夹卷位置和权限是否正常。
+用systemctl或者journalctl查看docker日志，检查新路径权限，新路径位置有没有报错，有报错就参考之前的路径情况，要和`/var/lib/docker`里的一模一样。
+配置没问题了，就检查每一个容器是否能正常启动`docker ps`，特别注意`status`中没有up的。
+容器间往往会有依赖，被依赖的无法启动那么应用就无法正常使用，对于出错的容器，检查容器中的端口映射，文件夹卷位置和权限是否正常。
 注意，数据库容器比较容易出问题，用`cp -r`迁移是大概率不行的，有好几个容器都是数据库重启失败。
 
 ## Docker pull 代理
@@ -107,7 +101,7 @@ sudo systemctl restart docker
 systemctl show --property=Environment docker  #输出中应包含 HTTP_PROXY 和 HTTPS_PROXY
 ```
 
-### 案例：运行 code-server
+## 案例：运行 code-server
 
 启动一个镜像会创建这个镜像的容器. 假如我们运行一个 code-server,我们想给一些参数
 
@@ -173,7 +167,7 @@ docker run -p 1024:3000 celiae/ceblog:latest
 
 检查运行情况，`docker ps -a`它会列出正在运行中的容器进程，`-a`代表显示包括没启动的容器
 
-### DockerHub
+## DockerHub
 
 ```bash
 docker push celiae/ceblog:latest  # 测试成功后推到 dockerhub
@@ -188,7 +182,7 @@ docker run -d -p 1024:3000 celiae/ceblog:latest # 服务器上运行镜像
 
 -d 运行在 daemon 后台
 
-### Docker Compose
+## Docker Compose
 
 目前 Docker Compose 不推荐在 docker-compose.yml 文件里声明版本（version）：
 

@@ -72,8 +72,12 @@ sudo systemctl restart nginx # 测试 nginx 配置文件语法
 docker pull nginx
 ```
 
-启动 nginx 镜像; 容器命名为 celiae-nginx; 只读挂载本地路径`/some/content`到Docker容器路径`/usr/share/nginx/html`;
-只读挂载本地路径`/host/path/nginx.conf`到Docker容器路径`/etc/nginx/nginx.conf`; 静默启动; 映射本机8080端口到Docker容器80端口.
+启动 nginx 镜像
+- 容器命名为 celiae-nginx
+- 只读挂载本地路径`/some/content`到Docker容器路径`/usr/share/nginx/html`
+- 只读挂载本地路径`/host/path/nginx.conf`到Docker容器路径`/etc/nginx/nginx.conf`
+- 映射本机8080端口到Docker容器80端口.
+- 静默启动
 
 ```bash
 docker run --name celiae-nginx -v /some/content:/usr/share/nginx/html:ro -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d -p 8080:80 nginx
