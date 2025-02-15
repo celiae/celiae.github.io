@@ -1,6 +1,9 @@
 ---
 title: Git使用
 excerpt: Git是分布式版本控制工具，不仅能与中央服务器交互代码，还能在本地提交。如今都用git开发软件，这样能很好的管理项目代码。Github是微软运营的代码托管平台，全世界开源代码几乎都在这上面，提交代码，讨论issue。GitLab也是代码托管平台，还能在服务器上自行部署，搭建自己的git服务器，常用于企业或个人代码仓库管理。
+toc: true
+categories:
+  - 开发
 ---
 
 Git是分布式版本控制工具，不仅能与中央服务器交互代码，还能在本地提交。如今都用git开发软件，这样能很好的管理项目代码。Github是微软运营的代码托管平台，全世界开源代码几乎都在这上面，提交代码，讨论issue。GitLab也是代码托管平台，还能在服务器上自行部署，搭建自己的git服务器，常用于企业或个人代码仓库管理。
@@ -90,7 +93,8 @@ git branch -u origin/main  # 切换远端默认分支
 
 ## 同步远程
 
-不推荐使用https，不够稳定。使用 ssh 私钥，配置密钥对,根据提示生成密钥对存放在指定位置（默认在~/.ssh 下）, `.pub`是公钥文件,需传输到服务端。在Github设置中编辑个人信息，侧面找到`SSH KEY`字样，进入添加SSH界面，将公钥复制到Github中保存。
+不推荐使用https，不够稳定。使用 ssh 私钥，配置密钥对,根据提示生成密钥对存放在指定位置（默认在~/.ssh 下）, `.pub`
+是公钥文件,需传输到服务端。在Github设置中编辑个人信息，侧面找到`SSH KEY`字样，进入添加SSH界面，将公钥复制到Github中保存。
 
 ```bash
 ssh-keygen -t ed25519 -C "<your_email>@example.com" # 使用ed25519加密算法生成密钥对
@@ -119,7 +123,8 @@ git push -u origin main:dev # 更新分支. 将本地的main分支推送到远�
 
 ## 部署 Git Server
 
-如果要部署Git Server，最好选择部署GitLab，不过此方法可以在比较低能的机器上搭建一个简易的 Git Server，原理很像 FTP/SCP。有能力的机器推荐使用 GitLab。
+如果要部署Git Server，最好选择部署GitLab，不过此方法可以在比较低能的机器上搭建一个简易的 Git Server，原理很像
+FTP/SCP。有能力的机器推荐使用 GitLab。
 
 ### 守护进程
 

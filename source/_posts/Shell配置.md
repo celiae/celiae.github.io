@@ -1,15 +1,18 @@
 ---
 title: Shell配置
 excerpt: 用Bash来执行程序，用Fish来交互
+toc: true
+categories:
+  - 系统
 ---
-# Shell配置
-
 用Bash来执行程序，用Fish来交互
 
 ## Bash配置
+
 ### Bash history
 
 常用命令
+
 ```bash
 fc # 在 $EDITOR 里修改上一次命令
 history # 列出历史
@@ -21,6 +24,7 @@ cat /dev/null > ~/.bash_history # 清空历史命令
 ```
 
 环境变量
+
 ```bash
 HISTFILE # 历史命令保存路径
 HISTCONTROL    # =ignoredups：重复的命令不会加入history中,=ignorespace 可以忽略空格开头的命令行（一些发行版默认 Arch需要配置,这可提高安全性），=ignoreboth:打开以上的两个特性
@@ -32,14 +36,17 @@ HISTFILESIZE    # file 中的历史命令
 ```
 
 快捷键
+
 - `ctrl`+`g`:退出 `ctrl`+`r` 搜索
 
 表达式
+
 - `!!`: 上一个命令，=`!-1`
 - `!N`: 第N个命令
 - `!-N`: 倒数第N个命令
 
 提示符，类似的还有`!:^`,`!:N`等
+
 ```bash
 !curl # 执行最近的curl. 命令：!<command>
 
@@ -50,6 +57,7 @@ ssh celiae@192.168.10       # 修改后的命令
 ```
 
 ### 安全配置
+
 `declare -rx`: 设置只读环境变量
 
 ```bash
@@ -74,8 +82,8 @@ shopt -s cmdhist
 shopt -s histverify #替换前确认
 ```
 
-> 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。shopt 是 "shell options" 的缩>写，通过它你可以查看和设置不同的 shell 选项。
-
+> 在 Bash 中，shopt -s 是用来启用某些可选的 shell 功能的命令。shopt 是 "shell options" 的缩>写，通过它你可以查看和设置不同的
+> shell 选项。
 
 ## SSH
 

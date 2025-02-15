@@ -1,8 +1,15 @@
 ---
 title: ArchLinux部署Nginx
 excerpt: Nginx是非常常用的Web服务软件，前端生产环境，系统负载均衡，反向代理这些互联网专业名词都离不开Nginx背景。
+toc: true
+categories:
+  - 系统
+tags:
+  - ArchLinux
 ---
+
 Nginx是非常常用的Web服务软件，前端生产环境，系统负载均衡，反向代理这些互联网专业名词都离不开Nginx背景。
+
 ## 安装Nginx
 
 包管理器下载安装 `nginx`，启动 nginx
@@ -13,6 +20,7 @@ sudo systemctl enable --now nginx  # 自启动，并且开启nginx
 ```
 
 编辑 nginx 配置文件`sudo vim /etc/nginx/nginx.conf`
+
 ```bash
 # /etc/nginx/nginx.conf
 user www-data;  # 负责运行nginx 的用户
@@ -50,6 +58,7 @@ http {
 ```
 
 保存并应用配置
+
 ```bash
 sudo nginx -t # 测试 nginx 配置文件语法
 sudo systemctl restart nginx # 测试 nginx 配置文件语法
@@ -58,11 +67,14 @@ sudo systemctl restart nginx # 测试 nginx 配置文件语法
 ## Docker部署
 
 拉取 nginx 镜像
+
 ```bash
 docker pull nginx
 ```
 
-启动 nginx 镜像; 容器命名为 celiae-nginx; 只读挂载本地路径`/some/content`到Docker容器路径`/usr/share/nginx/html`; 只读挂载本地路径`/host/path/nginx.conf`到Docker容器路径`/etc/nginx/nginx.conf`; 静默启动; 映射本机8080端口到Docker容器80端口.
+启动 nginx 镜像; 容器命名为 celiae-nginx; 只读挂载本地路径`/some/content`到Docker容器路径`/usr/share/nginx/html`;
+只读挂载本地路径`/host/path/nginx.conf`到Docker容器路径`/etc/nginx/nginx.conf`; 静默启动; 映射本机8080端口到Docker容器80端口.
+
 ```bash
 docker run --name celiae-nginx -v /some/content:/usr/share/nginx/html:ro -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d -p 8080:80 nginx
 ```
@@ -73,6 +85,7 @@ docker run --name celiae-nginx -v /some/content:/usr/share/nginx/html:ro -v /hos
 #### docker-compose.yml
 
 使用nginx镜像;挂载`/templates`到Docker容器`/etc/nginx/templates`;映射本地:容器;通过环境变量设置地址和端口.
+
 ```bash
 web:
   image: nginx
