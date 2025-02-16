@@ -1,6 +1,6 @@
 ---
 title: ArchLinux系统安装
-excerpt: 计算机中，每个文件都可以通过一些算法（MD5,SHA256,BLAKE2b）算出唯一的Hash值，一旦文件受到更改，得出的Hash就不一样。Hash同资源一起发布，以供用户检测文件是否被篡改。
+excerpt: 计算机中，每个文件都可以通过一些算法（MD5,SHA256,BLAKE2b）算出唯一的Hash值，一旦文件受到更改，得出的Hash就不一样。
 toc: true
 categories:
   - 系统

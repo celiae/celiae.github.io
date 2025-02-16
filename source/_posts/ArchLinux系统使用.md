@@ -1,6 +1,6 @@
 ---
 title: ArchLinux系统使用
-excerpt: 在安装了ArchLinux后，系统也该发挥作用，安装服务软件，部署开发环境。这几个配置文件不直接在已有的配置文件基础上修改，比如`/etc/environment`/`/etc/profile`等等，能保留系统安装时的模样。
+excerpt: 在安装了ArchLinux后，系统也该发挥作用，安装服务软件，部署开发环境。这几个配置文件不直接在已有的配置文件基础上修改
 toc: true
 categories:
   - 系统
